@@ -1,0 +1,24 @@
+---
+import ProjectCard from "../components/ProjectCard.astro"
+
+// mis proyectos reales de github
+const proyectos = [
+{slug: "trading-advisor", titulo: "Trading Advisor", descripcion: "Advisor de trading automático que analiza el historial de acciones usando Python, Ollama y pandas.", tecnologias: ["Python", "Ollama", "pandas"], github: "https://github.com/frandevp/Trading-advisor"},
+{slug: "3d-model", titulo: "3D Model", descripcion: "Proyecto de modelos 3D con Vite y React. Todavía en progreso, lo uso para practicar desarrollo web.", tecnologias: ["React", "Vite", "JavaScript"], github: "https://github.com/frandevp/3D-Model"},
+{slug: "flights-api", titulo: "Flights API", descripcion: "App de búsqueda de vuelos que usa la API de Amadeus para encontrar las mejores ofertas. En progreso.", tecnologias: ["JavaScript", "Amadeus API"], github: "https://github.com/frandevp/Flights-api"}
+]
+---
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Proyectos | Fran</title>
+<link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+<main>
+<h1>Proyectos</h1>
+{proyectos.map((p) => <ProjectCard {...p} />)}
+<a href="/">← Volver</a>
+</main>
+</body>
+</html>

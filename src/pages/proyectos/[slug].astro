@@ -1,0 +1,28 @@
+---
+// pagina de detalle de cada proyecto, la ruta se genera con el slug
+export function getStaticPaths() {
+const proyectos = [
+{slug: "trading-advisor", titulo: "Trading Advisor", descripcion: "Advisor de trading automático que analiza el historial de acciones usando Python, Ollama y pandas.", tecnologias: ["Python", "Ollama", "pandas"]},
+{slug: "3d-model", titulo: "3D Model", descripcion: "Proyecto de modelos 3D con Vite y React. Todavía en progreso, lo uso para practicar desarrollo web.", tecnologias: ["React", "Vite", "JavaScript"]},
+{slug: "flights-api", titulo: "Flights API", descripcion: "App de búsqueda de vuelos que usa la API de Amadeus para encontrar las mejores ofertas. En progreso.", tecnologias: ["JavaScript", "Amadeus API"]}
+]
+return proyectos.map((p) => ({params: {slug: p.slug}, props: p}))
+}
+
+const { titulo, descripcion, tecnologias } = Astro.props
+---
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>{titulo} | Fran</title>
+<link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+<main>
+<h1>{titulo}</h1>
+<p>{descripcion}</p>
+<p><strong>Tecnologías:</strong> {tecnologias.join(", ")}</p>
+<a href="/proyectos">← Volver a proyectos</a>
+</main>
+</body>
+</html>
