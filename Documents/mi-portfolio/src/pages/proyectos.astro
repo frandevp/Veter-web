@@ -1,5 +1,5 @@
 ---
-// traemos los proyectos desde wordpress
+// proyectos de wordpress
 let proyectos = []
 
 try {
@@ -11,7 +11,7 @@ titulo: p.title.rendered,
 descripcion: p.excerpt.rendered.replace(/<[^>]+>/g, "")
 }))
 } catch (e) {
-// si wordpress esta apagado mostramos lista vacia
+// mensaje si esta apagado
 console.log("WordPress no disponible")
 }
 ---
