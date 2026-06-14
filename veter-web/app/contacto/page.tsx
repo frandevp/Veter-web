@@ -6,11 +6,13 @@ export default function Contacto() {
 const [nombre, setNombre] = useState("")
 const [email, setEmail] = useState("")
 const [mensaje, setMensaje] = useState("")
+// idle | enviando | ok | error
 const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle")
 
 async function enviar(e: React.FormEvent) {
 e.preventDefault()
 setEstado("enviando")
+// mando al route handler
 
 const resp = await fetch("/api/contacto", {
 method: "POST",

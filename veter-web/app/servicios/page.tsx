@@ -1,12 +1,17 @@
+// hardcodeado — en wp no hay cpt para servicios
 const lista = [
-{ titulo: "Consulta general", desc: "Revisiones y diagnósticos completos para perros, gatos y pequeños animales.", icono: "🩺" },
-{ titulo: "Medicina preventiva", desc: "Calendario de vacunación adaptado, desparasitaciones y controles periódicos.", icono: "💉" },
-{ titulo: "Cirugía general", desc: "Intervenciones quirúrgicas con equipamiento moderno y anestesia segura.", icono: "🏥" },
-{ titulo: "Urgencias", desc: "Atendemos emergencias lo antes posible. Si es urgente, llámanos directamente.", icono: "🚨" },
-{ titulo: "Peluquería y estética", desc: "Baño, corte, cepillado y limpieza de oídos. Tu mascota siempre impecable.", icono: "✂️" },
-{ titulo: "Análisis y diagnóstico", desc: "Laboratorio propio para análisis de sangre, orina y heces. Resultados rápidos.", icono: "🔬" },
-{ titulo: "Dermatología", desc: "Tratamiento de alergias, problemas de piel e infecciones. Seguimiento personalizado.", icono: "🧴" },
-{ titulo: "Odontología", desc: "Limpieza dental y extracciones bajo anestesia. La boca también importa.", icono: "🦷" },
+{ titulo: "Consulta general", icono: "🩺", desc: "Revisiones y diagnósticos completos para perros, gatos y pequeños animales." },
+{ titulo: "Medicina preventiva", icono: "💉", desc: "Calendario de vacunación adaptado, desparasitaciones y controles periódicos." },
+{
+titulo: "Cirugía general",
+icono: "🏥",
+desc: "Intervenciones quirúrgicas con equipamiento moderno y anestesia segura.",
+},
+{ titulo: "Urgencias", icono: "🚨", desc: "Atendemos emergencias lo antes posible. Si es urgente, llámanos directamente." },
+{ titulo: "Peluquería y estética", icono: "✂️", desc: "Baño, corte, cepillado y limpieza de oídos. Tu mascota siempre impecable." },
+{ titulo: "Análisis y diagnóstico", icono: "🔬", desc: "Laboratorio propio para análisis de sangre, orina y heces. Resultados rápidos." },
+{ titulo: "Dermatología", icono: "🧴", desc: "Tratamiento de alergias, problemas de piel e infecciones." },
+{ titulo: "Odontología", icono: "🦷", desc: "Limpieza dental y extracciones bajo anestesia. La boca también importa." },
 ]
 
 export default function Servicios() {

@@ -9,6 +9,7 @@ title: "Veter — Clínica Veterinaria en Rincón de la Victoria",
 description: "Clínica veterinaria en Rincón de la Victoria, Málaga. Cuidamos de tu mascota con profesionalidad y cercanía.",
 }
 
+// enlaces del nav y footer
 const navLinks = [
 { href: "/", label: "Home" },
 { href: "/equipo", label: "Equipo" },

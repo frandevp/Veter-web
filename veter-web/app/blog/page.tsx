@@ -1,3 +1,4 @@
+// fuerzo dynamic porque si no hace fetch en build y peta
 export const dynamic = "force-dynamic"
 
 type Post = {
@@ -20,7 +21,7 @@ const resp = await fetch(
 )
 posts = await resp.json()
 } catch {
-// si wp no responde mostramos lista vacia
+// si wp esta caido mostramos lista vacia
 }
 
 return (
@@ -33,7 +34,7 @@ return (
 <div className="max-w-6xl mx-auto px-4 py-16">
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {posts.map(post => {
-const img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+let img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
 const fecha = new Date(post.date).toLocaleDateString("es-ES", {
 day: "numeric", month: "long", year: "numeric"
 })

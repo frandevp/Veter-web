@@ -1,27 +1,28 @@
+// tampoco hay cpt equipo en wp, lo pongo a mano
 const vets = [
 {
 nombre: "Dra. Laura Méndez",
 especialidad: "Medicina interna y urgencias",
-bio: "Más de 10 años de experiencia. Especialista en diagnóstico por imagen y enfermedades crónicas.",
 inicial: "L",
+bio: "Más de 10 años de experiencia. Especialista en diagnóstico por imagen y enfermedades crónicas.",
 },
 {
 nombre: "Dr. Carlos Ruiz",
 especialidad: "Cirugía y traumatología",
-bio: "Formado en la Universidad de Córdoba. Experto en ortopedia y cirugía de tejidos blandos.",
 inicial: "C",
+bio: "Formado en la Universidad de Córdoba. Experto en ortopedia y cirugía de tejidos blandos.",
 },
 {
 nombre: "Dra. Ana Torres",
 especialidad: "Dermatología y nutrición",
-bio: "Especialista en alergias cutáneas y dietas personalizadas para mascotas con necesidades especiales.",
 inicial: "A",
+bio: "Especialista en alergias cutáneas y dietas personalizadas.",
 },
 {
 nombre: "Dr. Javier Molina",
 especialidad: "Exóticos y pequeños animales",
-bio: "Veterinario especializado en reptiles, aves, conejos y roedores.",
 inicial: "J",
+bio: "Veterinario especializado en reptiles, aves, conejos y roedores.",
 },
 ]
 

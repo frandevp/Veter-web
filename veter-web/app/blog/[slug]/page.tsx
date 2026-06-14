@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 
+// la api devuelve un array aunque sea un post individual
 type WPPost = {
 slug: string
 title: { rendered: string }
@@ -13,7 +14,6 @@ _embedded?: {
 export default async function Post({ params }: PageProps<"/blog/[slug]">) {
 const { slug } = await params
 
-// la api devuelve un array aunque sea un solo post
 const resp = await fetch(
 `https://veter.es/wp-json/wp/v2/posts?slug=${slug}&_embed=1&_fields=slug,title,content,date,_embedded`,
 { next: { revalidate: 3600 } }
@@ -23,7 +23,7 @@ const data: WPPost[] = await resp.json()
 if (!data.length) notFound()
 
 const post = data[0]
-const img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+let img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
 const fecha = new Date(post.date).toLocaleDateString("es-ES", {
 day: "numeric", month: "long", year: "numeric",
 })
