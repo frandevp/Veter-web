@@ -14,7 +14,7 @@ style={{ filter: "brightness(0) invert(1)" }} />
 <p className="text-white text-sm mb-2 tracking-wide">
 Your Pets it&apos;s allways better with Veter
 </p>
-<h1 className="text-white text-2xl md:text-4xl font-bold mb-7 max-w-md leading-snug">
+<h1 className="text-2xl md:text-4xl font-bold mb-7 max-w-md leading-snug" style={{ color: "#ffffff" }}>
 La Salud de tu Mascota en las mejores manos
 </h1>
 <div className="flex flex-wrap gap-3">
