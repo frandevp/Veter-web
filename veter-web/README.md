@@ -1,6 +1,6 @@
 # veter-web
 
-Frontend para [veter.es](https://veter.es), desarrollado por Fran como proyecto final del curso.
+Frontend para [veter.es](https://veter.es).
 
 La web original tiene el diseño roto porque caducó la licencia de Elementor Pro. Este proyecto la reemplaza con Next.js, sin dependencias de plugins ni licencias externas.
 
