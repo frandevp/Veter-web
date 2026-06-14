@@ -1,135 +1,114 @@
 # veter-web
 
-Nuevo frontend para [veter.es](https://veter.es), construido con Next.js. Reemplaza el diseño roto de Elementor Pro con una web moderna, rápida y sin dependencias de plugins.
+Frontend para [veter.es](https://veter.es). La web original tiene el diseño roto porque caducó la licencia de Elementor Pro, así que la rehacemos desde cero con Next.js. Sin plugins, sin licencias que vencer, sin depender de que alguien renueve algo.
 
-El contenido del blog sigue gestionándose desde WordPress — la clínica no cambia su forma de trabajar. Solo cambia lo que ve el usuario final.
+El blog sigue en WordPress. La clínica no toca nada, siguen subiendo artículos igual que siempre. Nosotros leemos la REST API y lo mostramos.
 
 ## Demo
 
-🔗 [veter-web.vercel.app](https://veter-web.vercel.app)
+[veter-web.vercel.app](https://veter-web.vercel.app)
 
-## Qué hace
+## Páginas
 
-| Página | Descripción |
-|--------|-------------|
-| `/` | Home con hero, servicios destacados y CTA |
-| `/servicios` | Catálogo de servicios de la clínica |
-| `/equipo` | Presentación del equipo veterinario |
-| `/blog` | Artículos desde WordPress REST API |
-| `/blog/[slug]` | Post individual desde WordPress |
-| `/contacto` | Formulario que guarda el mensaje y envía email |
+| Ruta | Qué hace |
+|------|----------|
+| `/` | Home |
+| `/servicios` | Servicios de la clínica |
+| `/equipo` | Equipo veterinario |
+| `/blog` | Posts desde WordPress |
+| `/blog/[slug]` | Post individual |
+| `/contacto` | Formulario — guarda el mensaje en BD y manda email |
 
-## Stack técnico
+## Stack
 
-- **Next.js 16** — App Router, Server Components, Route Handlers
-- **Tailwind CSS 4** — estilos utility-first
-- **WordPress REST API** — fuente de datos del blog (headless)
-- **Drizzle ORM + libsql** — mensajes del formulario de contacto
-- **Turso** — SQLite distribuido en producción
-- **Resend** — envío de email al recibir un mensaje
+- Next.js 16 (App Router)
+- Tailwind CSS 4
+- WordPress REST API
+- Drizzle ORM + libsql
+- Turso (SQLite en producción)
+- Resend
 
-## Mínimos técnicos del proyecto
+## Mínimos técnicos del curso
 
 - ✅ Frontend en Next.js
 - ✅ Route Handler propio (`POST /api/contacto`)
-- ✅ Base de datos con SQLite + Drizzle
+- ✅ SQLite + Drizzle
 - ✅ API externa (WordPress REST API)
 
-## Arrancar en local
+## Cómo arrancarlo
 
 ```bash
-# 1. Clonar e instalar
-git clone https://github.com/tuusuario/veter-web
-cd veter-web
+git clone https://github.com/frandevp/Veter-web
+cd Veter-web/veter-web
 npm install
-
-# 2. Variables de entorno
 cp .env.local.example .env.local
-# Edita .env.local con tu RESEND_API_KEY
-# TURSO_DATABASE_URL ya tiene el valor por defecto para local (file:./contacto.db)
-
-# 3. Crear la tabla en la BD local
+# edita .env.local con tu RESEND_API_KEY
 npx drizzle-kit push
-
-# 4. Arrancar
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000).
+Abre http://localhost:3000.
 
 ## Variables de entorno
 
-| Variable | Descripción | Ejemplo |
-|----------|-------------|---------|
-| `TURSO_DATABASE_URL` | URL de la BD. En local: `file:./contacto.db` | `libsql://veter.turso.io` |
-| `TURSO_AUTH_TOKEN` | Token de Turso (vacío en local) | `eyJ...` |
-| `RESEND_API_KEY` | API key de Resend | `re_abc123` |
+| Variable | Para qué |
+|----------|----------|
+| `TURSO_DATABASE_URL` | URL de Turso. En local: `file:./contacto.db` |
+| `TURSO_AUTH_TOKEN` | Token de Turso. En local se deja vacío |
+| `RESEND_API_KEY` | API key de Resend |
 
-## Deploy en Vercel
+## Deploy
 
 ```bash
-# 1. Crear BD en Turso
 turso auth login
 turso db create veter-contacto
-turso db show veter-contacto        # copia la URL
-turso db tokens create veter-contacto  # copia el token
+turso db show veter-contacto
+turso db tokens create veter-contacto
 
-# 2. Crear tabla en producción
 TURSO_DATABASE_URL=libsql://... TURSO_AUTH_TOKEN=... npx drizzle-kit push
-
-# 3. Añadir variables en Vercel → Settings → Environment Variables
-#    TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, RESEND_API_KEY
+# añadir las tres variables en Vercel > Settings > Environment Variables
 ```
 
-Luego conecta el repo en [vercel.com](https://vercel.com) y despliega.
-
-## Estructura del proyecto
+## Estructura
 
 ```
 app/
-  page.tsx                  # Home
-  layout.tsx                # Nav + footer compartidos
+  page.tsx
+  layout.tsx
   blog/
-    page.tsx                # Listado de posts (WP)
-    [slug]/page.tsx         # Post individual (WP)
+    page.tsx
+    [slug]/page.tsx
   servicios/page.tsx
   equipo/page.tsx
-  contacto/page.tsx         # Formulario (Client Component)
+  contacto/page.tsx
   api/
-    contacto/route.ts       # POST: guarda en BD + envía email
+    contacto/route.ts
 lib/
-  db.ts                     # Cliente Drizzle + Turso/libsql
-  schema.ts                 # Esquema de la tabla mensajes
-drizzle.config.ts           # Configuración de Drizzle Kit
+  db.ts
+  schema.ts
+drizzle.config.ts
 ```
 
-## Decisiones técnicas
+## Por qué estas tecnologías
 
-**¿Por qué Next.js y no una SPA?**
-El blog necesita SEO. Con Next.js los posts se renderizan en servidor y Google los indexa. Una SPA con React puro no indexa bien sin configuración extra.
+Next.js porque el blog necesita SEO. Con un cliente React puro Google no indexa el contenido, los posts se renderizan en servidor y ya.
 
-**¿Por qué WordPress headless y no un CMS propio?**
-La clínica ya tiene contenido en WordPress y sabe usarlo. Cambiar el CMS supondría migrar datos y reentrenar al cliente. Con la REST API leemos ese contenido sin tocar nada del backend.
+WordPress headless porque la clínica ya lo usa. Cambiar de CMS significaría migrar contenido y enseñarles otra herramienta. Con la REST API leemos todo sin tocar el backend y ellos no notan nada.
 
-**¿Por qué Turso y no PostgreSQL?**
-El único dato que persiste es el formulario de contacto. SQLite es más que suficiente para ese volumen. Turso da SQLite distribuido con buena integración en Vercel, sin necesidad de provisionar un servidor de base de datos.
+Turso porque lo único que guardamos son mensajes del formulario de contacto. Para ese volumen SQLite es más que suficiente, y Turso funciona en Vercel sin tener que montar ningún servidor de base de datos.
 
-**¿Por qué Resend y no nodemailer?**
-nodemailer requiere un servidor SMTP propio o credenciales de Gmail, que tienen límites y configuraciones delicadas. Resend tiene una API REST simple, funciona en entornos serverless y el plan gratuito cubre con creces las necesidades de una clínica pequeña.
+Resend porque nodemailer en serverless es un lío: necesitas SMTP propio o credenciales de Gmail que tienen límites raros. Resend tiene una API simple, funciona y punto.
 
-## Uso de IA en el desarrollo
+## Cómo usamos la IA
 
-Este proyecto se desarrolló con asistencia de Claude (Anthropic) como herramienta de apoyo.
+Claude fue la mano derecha durante todo el desarrollo. No escribió el proyecto, pero estuvo en cada decisión técnica que nos habría costado tiempo buscando en la documentación.
 
-**Qué se pidió a la IA:**
-- Estructura inicial de páginas y componentes
-- Configuración del cliente Drizzle con libsql para soportar tanto `file:` local como Turso en producción
-- Resolución de un error de build: Resend lanzaba excepción al instanciar en módulo-level sin API key — se movió la instancia dentro del handler
-- Instalación de `@types/better-sqlite3` al detectar error de tipos en build
+Lo más útil fue el setup de Drizzle con libsql: que funcionara con un archivo SQLite local en desarrollo y con Turso en producción sin cambiar nada del código es algo que no es obvio leyendo la documentación de Drizzle por primera vez. También cuando fallaba el build por errores que no sabíamos de dónde venían. El más raro fue que Resend petaba en tiempo de build porque instanciábamos el cliente a nivel de módulo, fuera del handler. Sin la API key en el entorno de build lanzaba una excepción antes de recibir ninguna petición. La IA lo vio enseguida y lo movió dentro de la función. Otro caso fue que `better-sqlite3` no tenía tipos TypeScript y el build fallaba con un error poco claro; se arregló instalando `@types/better-sqlite3`.
 
-**Qué se revisó y corrigió manualmente:**
-- Los datos de servicios y equipo se escribieron a mano (WordPress no tiene esos CPTs)
-- La ubicación de la clínica ("Rincón de la Victoria, Málaga") estaba incorrecta en el placeholder inicial
-- Se verificó que los endpoints de la WordPress REST API existían antes de usarlos
+Cosas que fallaron o tuvimos que corregir nosotros:
 
-**Conclusión:** La IA agilizó el scaffolding y la resolución de errores de configuración, pero las decisiones de arquitectura, la verificación de la API real y el contenido específico de la clínica requirieron criterio humano.
+Cuando le preguntamos si los servicios y el equipo estaban en WordPress dijimos que sí sin haberlo comprobado. La IA asumió que había custom post types y generó el código para leerlos. Cuando fuimos a la API real no existía nada de eso. Tuvimos que escribir esos datos a mano.
+
+El home inicial ponía "Madrid" como ubicación de la clínica. Hay que leer lo que genera antes de darlo por bueno.
+
+Los ajustes visuales, los colores exactos del diseño real y el logo los fuimos corrigiendo manualmente comparando con la web original. La IA no puede ver la pantalla, así que hay cosas que tienes que hacer tú.
