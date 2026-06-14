@@ -1,51 +1,97 @@
-// home — presentacion de la clinica
-const cards = [
-{ titulo: "Consulta general", desc: "Revisiones y diagnósticos para tu mascota" },
-{ titulo: "Vacunaciones", desc: "Calendarios adaptados y protección completa" },
-{ titulo: "Cirugía", desc: "Intervenciones con equipamiento moderno" },
+const servicios = [
+{ titulo: "Atención increíble", desc: "Nuestro equipo está disponible para atender a tu mascota con la máxima dedicación.", icono: "🐾" },
+{ titulo: "Servicio integral", desc: "Desde consultas generales hasta cirugía especializada, todo en un mismo lugar.", icono: "🏥" },
+{ titulo: "Súper conveniente", desc: "Ubicados en el centro de Rincón de la Victoria, fácil acceso y aparcamiento.", icono: "📍" },
+]
+
+const stats = [
+{ num: "1.200+", label: "Intervenciones" },
+{ num: "3.500+", label: "Clientes" },
+{ num: "80+", label: "Adopciones" },
+{ num: "5.000+", label: "Tratamientos" },
 ]
 
 export default function Home() {
 return (
 <div>
-<section className="bg-[#104766] text-white py-28 px-4 text-center">
-<h1 className="text-4xl font-bold mb-4">Cuidamos a tu mascota como se merece</h1>
-<p className="text-blue-200 text-lg mb-10 max-w-xl mx-auto">
-Clínica veterinaria en Rincón de la Victoria, Málaga. Atención profesional y trato cercano.
+{/* hero */}
+<section className="relative bg-[#104766] text-white overflow-hidden">
+<div className="max-w-6xl mx-auto px-4 py-24 flex flex-col md:flex-row items-center gap-10">
+<div className="flex-1 text-center md:text-left">
+<img
+src="https://veter.es/wp-content/uploads/2024/05/Your-pet-is-always-better-with.png"
+alt="Your pet is always better with Veter"
+className="max-w-xs md:max-w-sm mb-6 mx-auto md:mx-0"
+/>
+<h1 className="text-white text-3xl font-bold mb-3">
+La Salud de tu Mascota en las mejores manos
+</h1>
+<p className="text-blue-200 mb-8">
+Clínica veterinaria en Rincón de la Victoria, Málaga. Atención profesional y cercana para tu compañero.
 </p>
-<div className="flex gap-4 justify-center flex-wrap">
-<a href="/contacto" className="bg-[#ea4f4e] text-white font-semibold px-7 py-3 rounded-full hover:bg-red-600 transition">
-Pedir cita
+<div className="flex flex-wrap gap-4 justify-center md:justify-start">
+<a href="https://wa.me/message/QSHQLWTJJJYDI1"
+target="_blank" rel="noopener noreferrer"
+className="text-white font-semibold px-7 py-3 rounded-full hover:opacity-90 transition"
+style={{ backgroundColor: "#ea4f4e" }}>
+Hacer una Cita
 </a>
-<a href="/servicios" className="bg-white text-[#104766] font-semibold px-7 py-3 rounded-full hover:bg-blue-50 transition">
-Ver servicios
+<a href="/servicios"
+className="bg-white font-semibold px-7 py-3 rounded-full hover:bg-blue-50 transition"
+style={{ color: "#104766" }}>
+Planes de Salud
 </a>
+</div>
+</div>
 </div>
 </section>
 
-<section className="max-w-6xl mx-auto px-4 py-16">
-<h2 className="text-2xl font-bold text-center text-gray-800 mb-10">Lo que ofrecemos</h2>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-{cards.map(c => (
-<div key={c.titulo} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-<h3 className="font-semibold text-gray-800 mb-2">{c.titulo}</h3>
-<p className="text-gray-500 text-sm">{c.desc}</p>
+{/* servicios */}
+<section className="max-w-6xl mx-auto px-4 py-20">
+<h2 className="text-2xl font-bold text-center mb-12" style={{ color: "#104766" }}>
+¿Por qué elegirnos?
+</h2>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+{servicios.map(s => (
+<div key={s.titulo} className="text-center p-6 rounded-xl bg-white shadow-sm border border-gray-100">
+<div className="text-4xl mb-4">{s.icono}</div>
+<h3 className="font-bold mb-2 text-lg" style={{ color: "#104766" }}>{s.titulo}</h3>
+<p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
 </div>
 ))}
 </div>
-<p className="text-center mt-8">
-<a href="/servicios" className="text-[#104766] text-sm font-medium hover:underline">
-Ver todos los servicios →
-</a>
-</p>
 </section>
 
-<section className="bg-blue-50 py-16 px-4 text-center">
-<h2 className="text-2xl font-bold text-gray-800 mb-3">¿Tu mascota necesita atención?</h2>
-<p className="text-gray-500 mb-7">Estamos aquí para ayudarte. Escríbenos sin compromiso.</p>
-<a href="/contacto" className="bg-[#ea4f4e] text-white font-semibold px-7 py-3 rounded-full hover:bg-red-600 transition">
-Contactar ahora
+{/* stats */}
+<section style={{ backgroundColor: "#104766" }} className="py-16 px-4">
+<div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+{stats.map(s => (
+<div key={s.label}>
+<p className="text-4xl font-bold mb-1">{s.num}</p>
+<p className="text-blue-200 text-sm">{s.label}</p>
+</div>
+))}
+</div>
+</section>
+
+{/* cta final */}
+<section className="py-20 px-4 text-center">
+<h2 className="text-2xl font-bold mb-3" style={{ color: "#104766" }}>
+¿Listo para un gran cuidado veterinario?
+</h2>
+<p className="text-gray-500 mb-8">¡Llámanos ahora o escríbenos!</p>
+<div className="flex gap-4 justify-center flex-wrap">
+<a href="tel:+34640995846"
+className="font-semibold px-7 py-3 rounded-full border-2 hover:bg-gray-50 transition"
+style={{ color: "#104766", borderColor: "#104766" }}>
++34 640 995 846
 </a>
+<a href="/contacto"
+className="text-white font-semibold px-7 py-3 rounded-full hover:opacity-90 transition"
+style={{ backgroundColor: "#ea4f4e" }}>
+Escribir mensaje
+</a>
+</div>
 </section>
 </div>
 )

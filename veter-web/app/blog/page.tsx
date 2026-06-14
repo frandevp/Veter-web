@@ -16,8 +16,8 @@ const posts: Post[] = await resp.json()
 
 return (
 <div>
-<section className="bg-[#104766] text-white py-20 px-4 text-center">
-<h1 className="text-4xl font-bold mb-3">Blog</h1>
+<section style={{ backgroundColor: "#104766" }} className="text-white py-20 px-4 text-center">
+<h1 className="text-white text-4xl font-bold mb-3">Blog</h1>
 <p className="text-blue-200">Consejos, noticias y curiosidades sobre el mundo animal.</p>
 </section>
 
@@ -29,9 +29,10 @@ day: "numeric", month: "long", year: "numeric"
 })
 return (
 <a href={`/blog/${post.slug}`} key={post.id}
-className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition group">
+className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition group block">
 <p className="text-xs text-gray-400 mb-2">{fecha}</p>
-<h2 className="font-semibold text-lg text-gray-800 mb-2 group-hover:text-[#104766] transition"
+<h2 className="font-bold text-lg mb-2 group-hover:text-[#ea4f4e] transition"
+style={{ color: "#104766" }}
 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 <div className="text-gray-500 text-sm line-clamp-3"
 dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
