@@ -19,9 +19,10 @@ return (
 <div className="max-w-6xl mx-auto px-4 py-24 flex flex-col md:flex-row items-center gap-10">
 <div className="flex-1 text-center md:text-left">
 <img
-src="https://veter.es/wp-content/uploads/2024/07/logo-130-x-50-1.png"
+src="https://veter.es/wp-content/uploads/2024/03/cropped-Logo-Veter-Group-e1778144720121.png"
 alt="Veter Group"
 className="h-16 mb-6 mx-auto md:mx-0"
+style={{ filter: "brightness(0) invert(1)" }}
 />
 <h1 className="text-white text-3xl font-bold mb-3">
 La Salud de tu Mascota en las mejores manos

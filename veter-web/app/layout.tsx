@@ -17,6 +17,8 @@ const navLinks = [
 { href: "/contacto", label: "Contacto" },
 ]
 
+const LOGO = "https://veter.es/wp-content/uploads/2024/03/cropped-Logo-Veter-Group-e1778144720121.png"
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 return (
 <html lang="es">
@@ -25,12 +27,7 @@ return (
 <header className="bg-white shadow-sm sticky top-0 z-50">
 <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 <a href="/">
-{/* logo real de veter.es */}
-<img
-src="https://veter.es/wp-content/uploads/2024/03/cropped-Logo-Veter-Group-e1778144720121.png"
-alt="Veter Group"
-className="h-12 w-auto"
-/>
+<img src={LOGO} alt="Veter Group" className="h-12 w-auto" />
 </a>
 <nav>
 <ul className="flex gap-7 text-sm font-semibold items-center" style={{ color: "#104766" }}>
@@ -59,10 +56,12 @@ Hacer una Cita
 <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
 
 <div>
+{/* logo invertido para fondo oscuro */}
 <img
-src="https://veter.es/wp-content/uploads/2024/07/logo-130-x-50-1.png"
+src={LOGO}
 alt="Veter"
 className="h-10 mb-5"
+style={{ filter: "brightness(0) invert(1)" }}
 />
 <p className="text-blue-200 text-sm leading-relaxed mb-2">
 <strong className="text-white">Teléfonos</strong><br />
