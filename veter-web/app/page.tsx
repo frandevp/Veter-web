@@ -11,24 +11,24 @@ _embedded?: {
 }
 }
 
-const LOGO = "https://veter.es/wp-content/uploads/2024/03/cropped-Logo-Veter-Group-e1778144720121.png"
-const HERO = "https://veter.es/wp-content/uploads/2020/03/home-1-01.jpg"
-const MAP = "https://veter.es/wp-content/uploads/2020/04/bg-map-contact.png"
+const LOGO = "/images/cropped-Logo-Veter-Group-e1778144720121.png"
+const HERO = "/images/home-1-01.jpg"
+const MAP = "/images/bg-map-contact.png"
 
 // imagenes de las 3 columnas de diferencias
 const diferencias = [
 {
-img: "https://veter.es/wp-content/uploads/2020/05/service-01.jpg",
+img: "/images/service-01.jpg",
 titulo: "Atención Personalizada",
 desc: "Cada mascota es única. El equipo adapta el cuidado a las necesidades de tu animal.",
 },
 {
-img: "https://veter.es/wp-content/uploads/2020/05/service-02.jpg",
+img: "/images/service-02.jpg",
 titulo: "Tecnología Avanzada",
 desc: "Contamos con equipos de diagnóstico modernos para el mejor servicio posible.",
 },
 {
-img: "https://veter.es/wp-content/uploads/2020/05/service-03.jpg",
+img: "/images/service-03.jpg",
 titulo: "Equipo Especializado",
 desc: "Profesionales con años de experiencia en medicina veterinaria.",
 },
@@ -113,7 +113,7 @@ Nuestro objetivo es ofrecer la mejor atención médica a tus mascotas, con un tr
 ))}
 </ul>
 </div>
-<img src="https://veter.es/wp-content/uploads/2020/05/team-01.jpg"
+<img src="/images/team-01.jpg"
 alt="Equipo veterinario" className="w-full rounded-2xl object-cover h-80" />
 </section>
 
@@ -157,7 +157,7 @@ style={{ backgroundColor: "#104766" }}>
 Ver todos nuestros servicios
 </a>
 </div>
-<img src="https://veter.es/wp-content/uploads/2020/05/service-05.jpg"
+<img src="/images/service-04.jpg"
 alt="Servicios veterinarios" className="w-full h-96 object-cover rounded-2xl" />
 </div>
 </section>

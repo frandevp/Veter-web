@@ -18,7 +18,7 @@ const navLinks = [
 { href: "/contacto", label: "Contacto" },
 ]
 
-const LOGO = "https://veter.es/wp-content/uploads/2024/03/cropped-Logo-Veter-Group-e1778144720121.png"
+const LOGO = "/images/cropped-Logo-Veter-Group-e1778144720121.png"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 return (
@@ -91,7 +91,7 @@ hola@veter.es
 
 <div className="flex items-start">
 <img
-src="https://veter.es/wp-content/uploads/2024/08/image-1-768x768.png"
+src="/images/martin2.jpg"
 alt=""
 className="w-40 h-40 object-cover rounded-xl"
 />

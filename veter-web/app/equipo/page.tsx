@@ -3,25 +3,25 @@ const vets = [
 {
 nombre: "Dra. Laura Méndez",
 especialidad: "Medicina interna y urgencias",
-inicial: "L",
+foto: "/images/franciscavet.jpeg",
 bio: "Más de 10 años de experiencia. Especialista en diagnóstico por imagen y enfermedades crónicas.",
 },
 {
 nombre: "Dr. Carlos Ruiz",
 especialidad: "Cirugía y traumatología",
-inicial: "C",
+foto: "/images/martin2.jpg",
 bio: "Formado en la Universidad de Córdoba. Experto en ortopedia y cirugía de tejidos blandos.",
 },
 {
 nombre: "Dra. Ana Torres",
 especialidad: "Dermatología y nutrición",
-inicial: "A",
+foto: "/images/francesca.jpeg",
 bio: "Especialista en alergias cutáneas y dietas personalizadas.",
 },
 {
 nombre: "Dr. Javier Molina",
 especialidad: "Exóticos y pequeños animales",
-inicial: "J",
+foto: "/images/team-01.jpg",
 bio: "Veterinario especializado en reptiles, aves, conejos y roedores.",
 },
 ]
@@ -40,10 +40,8 @@ Profesionales apasionados por la salud animal, con formación continua.
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 {vets.map(v => (
 <div key={v.nombre} className="flex gap-5 bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-<div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
-style={{ backgroundColor: "#104766" }}>
-{v.inicial}
-</div>
+<img src={v.foto} alt={v.nombre}
+className="w-20 h-20 rounded-full object-cover shrink-0" />
 <div>
 <h2 className="font-bold text-lg" style={{ color: "#104766" }}>{v.nombre}</h2>
 <p className="text-sm font-semibold mb-2" style={{ color: "#ea4f4e" }}>{v.especialidad}</p>
