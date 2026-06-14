@@ -1,50 +1,42 @@
-import { notFound } from "next/navigation";
+import { notFound } from "next/navigation"
 
 type WPPost = {
-  id: number;
-  slug: string;
-  title: { rendered: string };
-  content: { rendered: string };
-  date: string;
-};
+slug: string
+title: { rendered: string }
+content: { rendered: string }
+date: string
+}
 
-export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
-  const { slug } = await params;
+export default async function Post({ params }: PageProps<"/blog/[slug]">) {
+const { slug } = await params
 
-  const res = await fetch(
-    `https://veter.es/wp-json/wp/v2/posts?slug=${slug}&_fields=id,slug,title,content,date`,
-    { next: { revalidate: 3600 } }
-  );
+// la api devuelve un array aunque sea un solo post
+const resp = await fetch(
+`https://veter.es/wp-json/wp/v2/posts?slug=${slug}&_fields=slug,title,content,date`,
+{ next: { revalidate: 3600 } }
+)
+const data: WPPost[] = await resp.json()
 
-  const posts: WPPost[] = await res.json();
+if (!data.length) notFound()
 
-  if (!posts.length) notFound();
+const post = data[0]
+const fecha = new Date(post.date).toLocaleDateString("es-ES", {
+day: "numeric", month: "long", year: "numeric",
+})
 
-  const post = posts[0];
+return (
+<div className="max-w-3xl mx-auto px-4 py-16">
+<a href="/blog" className="text-sm text-[#104766] hover:underline mb-8 inline-block">
+← Volver al blog
+</a>
 
-  const fecha = new Date(post.date).toLocaleDateString("es-ES", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+<h1 className="text-3xl font-bold text-gray-900 mt-4 mb-2"
+dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
-  return (
-    <div className="max-w-3xl mx-auto px-4 py-16">
-      <a href="/blog" className="text-sm text-[#104766] hover:underline mb-8 inline-block">
-        ← Volver al blog
-      </a>
+<p className="text-sm text-gray-400 mb-10">{fecha}</p>
 
-      <h1
-        className="text-3xl font-bold text-gray-900 mb-3 mt-4"
-        dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-      />
-
-      <p className="text-sm text-gray-400 mb-10">{fecha}</p>
-
-      <div
-        className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-      />
-    </div>
-  );
+<div className="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+</div>
+)
 }
