@@ -1,8 +1,10 @@
 # veter-web
 
-Frontend para [veter.es](https://veter.es). La web original tiene el diseño roto porque caducó la licencia de Elementor Pro, así que la rehacemos desde cero con Next.js. Sin plugins, sin licencias que vencer, sin depender de que alguien renueve algo.
+Frontend para [veter.es](https://veter.es), desarrollado por Fran como proyecto final del curso.
 
-El blog sigue en WordPress. La clínica no toca nada, siguen subiendo artículos igual que siempre. Nosotros leemos la REST API y lo mostramos.
+La web original tiene el diseño roto porque caducó la licencia de Elementor Pro. Este proyecto la reemplaza con Next.js, sin dependencias de plugins ni licencias externas.
+
+El blog sigue gestionándose desde WordPress. La clínica no cambia su forma de trabajar: sigue subiendo artículos igual que siempre. El frontend lee la REST API y lo muestra con un diseño nuevo.
 
 ## Demo
 
@@ -17,7 +19,7 @@ El blog sigue en WordPress. La clínica no toca nada, siguen subiendo artículos
 | `/equipo` | Equipo veterinario |
 | `/blog` | Posts desde WordPress |
 | `/blog/[slug]` | Post individual |
-| `/contacto` | Formulario — guarda el mensaje en BD y manda email |
+| `/contacto` | Formulario — guarda el mensaje en BD y envía email |
 
 ## Stack
 
@@ -89,26 +91,12 @@ lib/
 drizzle.config.ts
 ```
 
-## Por qué estas tecnologías
+## Decisiones técnicas
 
-Next.js porque el blog necesita SEO. Con un cliente React puro Google no indexa el contenido, los posts se renderizan en servidor y ya.
+Next.js en vez de una SPA porque el blog necesita SEO. Con un cliente React puro Google no indexa el contenido. Al renderizar en servidor, los posts aparecen en buscadores sin configuración extra.
 
-WordPress headless porque la clínica ya lo usa. Cambiar de CMS significaría migrar contenido y enseñarles otra herramienta. Con la REST API leemos todo sin tocar el backend y ellos no notan nada.
+WordPress headless porque la clínica ya lo tiene montado y funciona. Cambiar de CMS implicaría migrar contenido y reentrenar al cliente. Con la REST API se lee todo sin tocar el backend.
 
-Turso porque lo único que guardamos son mensajes del formulario de contacto. Para ese volumen SQLite es más que suficiente, y Turso funciona en Vercel sin tener que montar ningún servidor de base de datos.
+Turso en vez de PostgreSQL porque lo único que persiste son los mensajes del formulario de contacto. Para ese volumen SQLite es suficiente, y Turso funciona bien en Vercel sin necesidad de gestionar un servidor de base de datos.
 
-Resend porque nodemailer en serverless es un lío: necesitas SMTP propio o credenciales de Gmail que tienen límites raros. Resend tiene una API simple, funciona y punto.
-
-## Cómo usamos la IA
-
-Claude fue la mano derecha durante todo el desarrollo. No escribió el proyecto, pero estuvo en cada decisión técnica que nos habría costado tiempo buscando en la documentación.
-
-Lo más útil fue el setup de Drizzle con libsql: que funcionara con un archivo SQLite local en desarrollo y con Turso en producción sin cambiar nada del código es algo que no es obvio leyendo la documentación de Drizzle por primera vez. También cuando fallaba el build por errores que no sabíamos de dónde venían. El más raro fue que Resend petaba en tiempo de build porque instanciábamos el cliente a nivel de módulo, fuera del handler. Sin la API key en el entorno de build lanzaba una excepción antes de recibir ninguna petición. La IA lo vio enseguida y lo movió dentro de la función. Otro caso fue que `better-sqlite3` no tenía tipos TypeScript y el build fallaba con un error poco claro; se arregló instalando `@types/better-sqlite3`.
-
-Cosas que fallaron o tuvimos que corregir nosotros:
-
-Cuando le preguntamos si los servicios y el equipo estaban en WordPress dijimos que sí sin haberlo comprobado. La IA asumió que había custom post types y generó el código para leerlos. Cuando fuimos a la API real no existía nada de eso. Tuvimos que escribir esos datos a mano.
-
-El home inicial ponía "Madrid" como ubicación de la clínica. Hay que leer lo que genera antes de darlo por bueno.
-
-Los ajustes visuales, los colores exactos del diseño real y el logo los fuimos corrigiendo manualmente comparando con la web original. La IA no puede ver la pantalla, así que hay cosas que tienes que hacer tú.
+Resend en vez de nodemailer porque en entornos serverless nodemailer necesita un servidor SMTP propio o credenciales de Gmail con límites de envío. Resend tiene una API directa y no requiere configuración adicional.
