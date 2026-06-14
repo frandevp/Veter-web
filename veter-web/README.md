@@ -100,3 +100,15 @@ WordPress headless porque la clínica ya lo tiene montado y funciona. Cambiar de
 Turso en vez de PostgreSQL porque lo único que persiste son los mensajes del formulario de contacto. Para ese volumen SQLite es suficiente, y Turso funciona bien en Vercel sin necesidad de gestionar un servidor de base de datos.
 
 Resend en vez de nodemailer porque en entornos serverless nodemailer necesita un servidor SMTP propio o credenciales de Gmail con límites de envío. Resend tiene una API directa y no requiere configuración adicional.
+
+## Uso de IA
+
+Durante el desarrollo se utilizó una herramienta de IA como apoyo, principalmente para resolver problemas de configuración y acelerar el scaffolding inicial.
+
+Lo más útil fue el setup de Drizzle con libsql: conseguir que funcionara con un archivo SQLite local en desarrollo y con Turso en producción sin modificar el código no es algo que esté bien documentado en un solo sitio. También ayudó cuando fallaba el build por errores poco claros. El más notable fue que Resend lanzaba una excepción en tiempo de build porque el cliente se instanciaba a nivel de módulo, fuera del handler. Sin la API key en el entorno de build, petaba antes de recibir ninguna petición. La solución fue moverlo dentro de la función. Otro caso fue que `better-sqlite3` no incluía tipos TypeScript, lo que provocaba un error de compilación que se resolvió instalando `@types/better-sqlite3`.
+
+Correcciones manuales necesarias:
+
+La IA generó fetches a `/wp-json/wp/v2/servicios` y `/wp-json/wp/v2/equipo` asumiendo que existían como custom post types. Al consultar `GET /wp-json/wp/v2/types` se comprobó que ninguno de los dos endpoints existía en la instalación real. Se optó por datos estáticos hardcodeados directamente en los componentes.
+
+El layout inicial usaba `bg-blue-600` de Tailwind en lugar de los colores reales de marca. Se inspeccionó el CSS del sitio original para obtener los valores exactos (`#104766` y `#ea4f4e`) y se sustituyeron en todos los componentes, incluyendo el logo del header, que apuntaba a un placeholder en vez de a la imagen alojada en `/wp-content/uploads/`.
