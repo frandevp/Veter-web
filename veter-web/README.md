@@ -6,7 +6,7 @@ El contenido del blog sigue gestionándose desde WordPress — la clínica no ca
 
 ## Demo
 
-🔗 [veter.es](https://veter.es) — pendiente de deploy en Vercel
+🔗 [veter-web.vercel.app](https://veter-web.vercel.app)
 
 ## Qué hace
 
