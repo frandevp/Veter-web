@@ -87,10 +87,9 @@ Nuestro objetivo es ofrecer la mejor atención médica a tus mascotas, con un tr
 ))}
 </ul>
 </div>
-<img src="/images/franciscavet.jpeg"
-alt="Equipo veterinario"
-className="w-full h-96 object-cover object-top"
-style={{ borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%", background: "#fdf0ef" }} />
+<img src="/images/sobre-veter.png"
+alt="Veter Centro Veterinario"
+className="w-full h-96 object-cover object-top rounded-2xl" />
 </section>
 
 {/* 3 columnas con imagenes de wp */}
