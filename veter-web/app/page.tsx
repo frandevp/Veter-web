@@ -14,7 +14,6 @@ _embedded?: {
 }
 }
 
-const MAP = "/images/bg-map-contact.png"
 
 // imagenes de las 3 columnas de diferencias
 const diferencias = [
@@ -158,17 +157,6 @@ alt="Servicios veterinarios" className="w-full h-96 object-cover rounded-2xl" />
 </div>
 </section>
 
-{/* imagen mapa */}
-<section className="relative h-72 overflow-hidden">
-<img src={MAP} alt="Ubicación Veter" className="w-full h-full object-cover" />
-<div className="absolute inset-0 flex items-center justify-center"
-style={{ backgroundColor: "rgba(16,71,102,0.6)" }}>
-<div className="text-center text-white">
-<h3 className="text-2xl font-bold mb-2">Encuéntranos</h3>
-<p className="text-blue-200 text-sm">Plaza del señorío, local 3 · Rincón de la Victoria, Málaga</p>
-</div>
-</div>
-</section>
 
 {/* datos de contacto rapido */}
 <section className="py-20 px-4 bg-gray-50">
@@ -228,20 +216,6 @@ Ver todos los artículos
 </section>
 )}
 
-{/* newsletter */}
-<section style={{ backgroundColor: "#ea4f4e" }} className="py-16 px-4 text-white text-center">
-<h3 className="text-2xl font-bold mb-2">Mantente informado</h3>
-<p className="text-red-100 mb-8 text-sm">Consejos, noticias y novedades de Veter directo a tu email.</p>
-<form className="flex flex-wrap gap-3 justify-center max-w-md mx-auto">
-<input type="email" placeholder="Tu correo electrónico"
-className="flex-1 px-5 py-3 rounded-full text-gray-800 text-sm focus:outline-none min-w-0" />
-<button type="submit"
-className="text-white font-semibold px-6 py-3 rounded-full hover:opacity-90 transition"
-style={{ backgroundColor: "#104766" }}>
-Suscribirme
-</button>
-</form>
-</section>
 
 </div>
 )
