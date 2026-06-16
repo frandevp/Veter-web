@@ -18,19 +18,19 @@ const MAP = "/images/bg-map-contact.png"
 // imagenes de las 3 columnas de diferencias
 const diferencias = [
 {
-img: "/images/service-01.jpg",
-titulo: "Atención Personalizada",
-desc: "Cada mascota es única. El equipo adapta el cuidado a las necesidades de tu animal.",
+img: "/images/atencion-increible.jpg",
+titulo: "Atención increíble",
+desc: "Un servicio médico excepcional en un espacio cercano y acogedor, que incluye consejos y asesoría dedicado a padres de mascotas.",
 },
 {
-img: "/images/service-02.jpg",
-titulo: "Tecnología Avanzada",
-desc: "Contamos con equipos de diagnóstico modernos para el mejor servicio posible.",
+img: "/images/servicio-integral.png",
+titulo: "Servicio integral",
+desc: "Se abordan más del 95 % de sus necesidades de atención, con servicios veterinarios de medicina preventiva y curativa bajo un mismo techo.",
 },
 {
-img: "/images/service-03.jpg",
-titulo: "Equipo Especializado",
-desc: "Profesionales con años de experiencia en medicina veterinaria.",
+img: "/images/super-conveniente.jpeg",
+titulo: "Súper conveniente",
+desc: "Planes de Salud. Citas para el mismo día o para día siguiente. Abierto hasta las 20:00 h.",
 },
 ]
 
@@ -96,8 +96,8 @@ style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
 {/* 3 columnas con imagenes de wp */}
 <section className="bg-gray-50 py-24 px-4">
 <div className="max-w-6xl mx-auto">
-<p className="text-sm font-semibold uppercase tracking-widest text-center mb-3" style={{ color: "#ea4f4e" }}>Nuestros valores</p>
-<h2 className="text-3xl font-bold text-center mb-14" style={{ color: "#104766" }}>¿Qué nos hace diferentes?</h2>
+<h2 className="text-3xl font-bold text-center mb-2" style={{ color: "#104766" }}>¿Qué nos hace diferentes?</h2>
+<p className="text-center mb-14 text-gray-500">Cercanía, empatía y excelencia</p>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 {diferencias.map(d => (
 <div key={d.titulo} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
