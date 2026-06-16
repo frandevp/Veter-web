@@ -87,9 +87,14 @@ Nuestro objetivo es ofrecer la mejor atención médica a tus mascotas, con un tr
 ))}
 </ul>
 </div>
+<div className="flex justify-center">
+<div className="w-80 h-80 rounded-full overflow-hidden border-4"
+style={{ borderColor: "#104766" }}>
 <img src="/images/sobre-veter.png"
 alt="Veter Centro Veterinario"
-className="w-full h-96 object-cover object-top rounded-2xl" />
+className="w-full h-full object-cover object-top" />
+</div>
+</div>
 </section>
 
 {/* 3 columnas con imagenes de wp */}
