@@ -86,9 +86,8 @@ return (
 <div className="flex gap-8 items-start">
 {/* panel izquierdo */}
 <div className="hidden md:flex flex-col items-center shrink-0 w-44 text-center">
-<div className="w-14 h-14 rounded-full flex items-center justify-center mb-3"
-style={{ backgroundColor: "#104766" }}>
-<span className="text-white text-xs font-bold leading-tight">Veter</span>
+<div className="mb-3">
+<img src="/images/logo-130-x-50-1.png" alt="Veter" className="h-12 w-auto" />
 </div>
 <p className="font-bold text-sm leading-tight mb-1" style={{ color: "#104766" }}>Veter Centro Veterinario</p>
 <div className="flex gap-0.5 text-yellow-400 text-lg mb-1">★★★★★</div>
