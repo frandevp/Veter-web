@@ -1,4 +1,5 @@
 import HeroSlider from "./components/HeroSlider"
+import ReviewsCarousel from "./components/ReviewsCarousel"
 
 export const dynamic = "force-dynamic"
 
@@ -138,17 +139,11 @@ alt="Servicios veterinarios" className="w-full h-96 object-cover rounded-2xl" />
 </div>
 </section>
 
-{/* testimonial y numeros */}
-<section style={{ backgroundColor: "#104766" }} className="py-24 px-4 text-white">
-<div className="max-w-5xl mx-auto">
-<div className="text-center mb-16">
-<p className="text-blue-200 text-sm uppercase tracking-widest mb-4">Lo que dicen nuestros clientes</p>
-<blockquote className="text-2xl font-medium max-w-2xl mx-auto leading-relaxed mb-6">
-&ldquo;La atención que recibió mi perro fue excepcional. Profesionales increíbles, siempre pendientes de todo.&rdquo;
-</blockquote>
-<p className="text-blue-300 text-sm">— Rocío Sanz, cliente desde 2018</p>
-</div>
-<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-blue-700 pt-14">
+<ReviewsCarousel />
+
+{/* contadores */}
+<section style={{ backgroundColor: "#104766" }} className="py-16 px-4 text-white">
+<div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 {[
 { num: "1.200+", label: "Intervenciones" },
 { num: "3.500+", label: "Clientes" },
@@ -160,7 +155,6 @@ alt="Servicios veterinarios" className="w-full h-96 object-cover rounded-2xl" />
 <p className="text-blue-200 text-sm">{s.label}</p>
 </div>
 ))}
-</div>
 </div>
 </section>
 
