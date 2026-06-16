@@ -115,6 +115,9 @@ style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
 {/* rejilla servicios */}
 <section className="py-24 px-4">
 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<img src="/images/O0A0940-scaled.jpg"
+alt="Servicios veterinarios" className="w-full h-[480px] object-cover object-top"
+style={{ borderRadius: "42% 58% 55% 45% / 48% 40% 60% 52%" }} />
 <div>
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Lo que ofrecemos</p>
 <h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Nuestros Servicios</h2>
@@ -133,9 +136,6 @@ style={{ backgroundColor: "#104766" }}>
 Ver todos nuestros servicios
 </a>
 </div>
-<img src="/images/O0A0940-scaled.jpg"
-alt="Servicios veterinarios" className="w-full h-[480px] object-cover object-top"
-style={{ borderRadius: "42% 58% 55% 45% / 48% 40% 60% 52%" }} />
 </div>
 </section>
 
