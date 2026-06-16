@@ -98,7 +98,7 @@ style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
 <div className="max-w-6xl mx-auto">
 <h2 className="text-3xl font-bold text-center mb-2" style={{ color: "#104766" }}>¿Qué nos hace diferentes?</h2>
 <p className="text-center mb-14 text-gray-500">Cercanía, empatía y excelencia</p>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-14">
 {diferencias.map(d => (
 <div key={d.titulo} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
 <img src={d.img} alt={d.titulo} className="w-full h-52 object-cover" />
