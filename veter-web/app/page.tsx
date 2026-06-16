@@ -133,7 +133,7 @@ style={{ backgroundColor: "#104766" }}>
 Ver todos nuestros servicios
 </a>
 </div>
-<img src="/images/vet-servicios.jpeg"
+<img src="/images/O0A0940-scaled.jpg"
 alt="Servicios veterinarios" className="w-full h-[480px] object-cover object-top"
 style={{ borderRadius: "42% 58% 55% 45% / 48% 40% 60% 52%" }} />
 </div>
