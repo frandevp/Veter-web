@@ -89,13 +89,6 @@ hola@veter.es
 </ul>
 </div>
 
-<div className="flex items-start">
-<img
-src="/images/martin2.jpg"
-alt=""
-className="w-40 h-40 object-cover rounded-xl"
-/>
-</div>
 
 </div>
 
