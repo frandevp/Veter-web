@@ -34,16 +34,18 @@ const page = Math.max(1, parseInt(pageParam ?? "1", 10) || 1)
 
 let posts: Post[] = []
 let totalPages = 1
+let wpDown = false
 
 try {
 const resp = await fetch(
 `https://veter.es/wp-json/wp/v2/posts?per_page=${PER_PAGE}&page=${page}&_embed`,
 { next: { revalidate: 3600 } }
 )
+if (!resp.ok) throw new Error(`wp ${resp.status}`)
 totalPages = parseInt(resp.headers.get("X-WP-TotalPages") ?? "1", 10)
 posts = await resp.json()
 } catch {
-// si wp esta caido mostramos lista vacia
+wpDown = true
 }
 
 return (
@@ -54,6 +56,14 @@ return (
 </section>
 
 <div className="max-w-6xl mx-auto px-4 py-16">
+
+{wpDown && (
+<div className="text-center py-16 text-gray-500">
+<p className="text-lg font-semibold mb-2" style={{ color: "#104766" }}>Blog temporalmente no disponible</p>
+<p className="text-sm">Estamos teniendo problemas para cargar los artículos. Inténtalo de nuevo en unos minutos.</p>
+</div>
+)}
+
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {posts.map(post => {
 const img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url

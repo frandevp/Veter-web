@@ -18,22 +18,25 @@ type Params = { slug: string }
 
 const strip = (html: string) => html.replace(/<[^>]+>/g, "").trim()
 
-async function getPost(slug: string): Promise<WPPost | null> {
+type FetchResult = { post: WPPost | null; wpDown: boolean }
+
+async function getPost(slug: string): Promise<FetchResult> {
 try {
 const resp = await fetch(
 `https://veter.es/wp-json/wp/v2/posts?slug=${slug}&_embed=1&_fields=slug,title,content,excerpt,date,modified,_embedded`,
 { next: { revalidate: 3600 } }
 )
+if (!resp.ok) return { post: null, wpDown: true }
 const data: WPPost[] = await resp.json()
-return data[0] ?? null
+return { post: data[0] ?? null, wpDown: false }
 } catch {
-return null
+return { post: null, wpDown: true }
 }
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
 const { slug } = await params
-const post = await getPost(slug)
+const { post } = await getPost(slug)
 if (!post) return {}
 const img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
 const titulo = strip(post.title.rendered)
@@ -54,7 +57,21 @@ modifiedTime: post.modified,
 
 export default async function Post({ params }: { params: Promise<Params> }) {
 const { slug } = await params
-const post = await getPost(slug)
+const { post, wpDown } = await getPost(slug)
+
+// wp caido: aviso amigable en vez de 404
+if (!post && wpDown) {
+return (
+<div className="max-w-3xl mx-auto px-4 py-24 text-center">
+<p className="text-2xl font-bold mb-3" style={{ color: "#104766" }}>Artículo no disponible ahora mismo</p>
+<p className="text-gray-500 mb-8">Tenemos problemas para conectar con el servidor. Inténtalo de nuevo en unos minutos.</p>
+<a href="/blog" className="px-6 py-2 rounded-full text-white font-semibold text-sm" style={{ backgroundColor: "#104766" }}>
+← Volver al blog
+</a>
+</div>
+)
+}
+
 if (!post) notFound()
 
 const img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
