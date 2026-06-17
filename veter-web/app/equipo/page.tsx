@@ -13,28 +13,22 @@ description: "Profesionales apasionados por la salud animal en Rincón de la Vic
 // tampoco hay cpt equipo en wp, lo pongo a mano
 const vets = [
 {
-nombre: "Dra. Laura Méndez",
+nombre: "Dra. Francisca",
 especialidad: "Medicina interna y urgencias",
 foto: "/images/franciscavet.jpeg",
-bio: "Más de 10 años de experiencia. Especialista en diagnóstico por imagen y enfermedades crónicas.",
+bio: "Más de 20 años de experiencia. Especialista en diagnóstico por imagen y enfermedades crónicas.",
 },
 {
-nombre: "Dr. Carlos Ruiz",
+nombre: "Dr. Martin",
 especialidad: "Cirugía y traumatología",
 foto: "/images/martin2.jpg",
-bio: "Formado en la Universidad de Córdoba. Experto en ortopedia y cirugía de tejidos blandos.",
+bio: "Experto en ortopedia y cirugía de tejidos blandos con amplia trayectoria en clínica veterinaria.",
 },
 {
-nombre: "Dra. Ana Torres",
+nombre: "Dra. Francesca",
 especialidad: "Dermatología y nutrición",
 foto: "/images/francesca.jpeg",
-bio: "Especialista en alergias cutáneas y dietas personalizadas.",
-},
-{
-nombre: "Dr. Javier Molina",
-especialidad: "Exóticos y pequeños animales",
-foto: "/images/team-01.jpg",
-bio: "Veterinario especializado en reptiles, aves, conejos y roedores.",
+bio: "Especialista en alergias cutáneas, enfermedades de la piel y dietas personalizadas.",
 },
 ]
 
