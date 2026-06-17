@@ -23,6 +23,7 @@ _embedded?: {
 }
 
 const PER_PAGE = 12
+const WP = process.env.WP_API ?? "https://veter.es"
 
 export default async function Blog({
 searchParams,
@@ -38,7 +39,7 @@ let wpDown = false
 
 try {
 const resp = await fetch(
-`https://veter.es/wp-json/wp/v2/posts?per_page=${PER_PAGE}&page=${page}&_embed`,
+`${WP}/wp-json/wp/v2/posts?per_page=${PER_PAGE}&page=${page}&_embed`,
 { next: { revalidate: 3600 } }
 )
 if (!resp.ok) throw new Error(`wp ${resp.status}`)

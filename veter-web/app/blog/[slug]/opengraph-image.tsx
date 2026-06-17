@@ -15,6 +15,8 @@ _embedded?: {
 
 const strip = (html: string) => html.replace(/<[^>]+>/g, "").trim()
 
+const WP = process.env.WP_API ?? "https://veter.es"
+
 export default async function Image({ params }: { params: { slug: string } }) {
 let titulo = "Veter Centro Veterinario"
 let resumen = "Clínica veterinaria en Rincón de la Victoria, Málaga"
@@ -22,7 +24,7 @@ let featuredImg: string | null = null
 
 try {
 const resp = await fetch(
-`https://veter.es/wp-json/wp/v2/posts?slug=${params.slug}&_embed=1&_fields=title,excerpt,_embedded`,
+`${WP}/wp-json/wp/v2/posts?slug=${params.slug}&_embed=1&_fields=title,excerpt,_embedded`,
 { next: { revalidate: 3600 } }
 )
 const data: WPPost[] = await resp.json()

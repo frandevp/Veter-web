@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar"
 const font = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
 export const metadata: Metadata = {
-metadataBase: new URL("https://veter-web.vercel.app"),
+metadataBase: new URL("https://veter.es"),
 title: {
 default: "Veter — Clínica Veterinaria en Rincón de la Victoria",
 template: "%s | Veter",
@@ -23,7 +23,7 @@ const jsonLdLocal = {
 "@context": "https://schema.org",
 "@type": "VeterinaryCare",
 name: "Veter Centro Veterinario",
-url: "https://veter-web.vercel.app",
+url: "https://veter.es",
 telephone: ["+34640995846", "+34951257388"],
 email: "hola@veter.es",
 address: {

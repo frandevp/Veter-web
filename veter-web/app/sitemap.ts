@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 
-const BASE = "https://veter-web.vercel.app"
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://veter.es"
 
 type WPPost = { slug: string; modified: string }
 
@@ -15,8 +15,9 @@ const estaticas: MetadataRoute.Sitemap = [
 
 let posts: WPPost[] = []
 try {
+const WP = process.env.WP_API ?? "https://veter.es"
 const resp = await fetch(
-"https://veter.es/wp-json/wp/v2/posts?per_page=100&_fields=slug,modified",
+`${WP}/wp-json/wp/v2/posts?per_page=100&_fields=slug,modified`,
 { next: { revalidate: 3600 } }
 )
 posts = await resp.json()

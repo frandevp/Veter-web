@@ -20,10 +20,12 @@ const strip = (html: string) => html.replace(/<[^>]+>/g, "").trim()
 
 type FetchResult = { post: WPPost | null; wpDown: boolean }
 
+const WP = process.env.WP_API ?? "https://veter.es"
+
 async function getPost(slug: string): Promise<FetchResult> {
 try {
 const resp = await fetch(
-`https://veter.es/wp-json/wp/v2/posts?slug=${slug}&_embed=1&_fields=slug,title,content,excerpt,date,modified,_embedded`,
+`${WP}/wp-json/wp/v2/posts?slug=${slug}&_embed=1&_fields=slug,title,content,excerpt,date,modified,_embedded`,
 { next: { revalidate: 3600 } }
 )
 if (!resp.ok) return { post: null, wpDown: true }
@@ -90,7 +92,7 @@ author: { "@type": "Organization", name: "Veter Centro Veterinario" },
 publisher: {
 "@type": "Organization",
 name: "Veter Centro Veterinario",
-logo: { "@type": "ImageObject", url: "https://veter-web.vercel.app/images/cropped-Logo-Veter-Group-e1778144720121.png" },
+logo: { "@type": "ImageObject", url: "https://veter.es/images/cropped-Logo-Veter-Group-e1778144720121.png" },
 },
 ...(img && { image: img }),
 }
