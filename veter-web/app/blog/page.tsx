@@ -9,7 +9,6 @@ description: "Consejos de salud animal y cuidado de mascotas del equipo de Veter
 },
 }
 
-// revalidate cada hora en vez de force-dynamic
 export const revalidate = 3600
 
 type Post = {
@@ -23,13 +22,25 @@ _embedded?: {
 }
 }
 
-export default async function Blog() {
+const PER_PAGE = 12
+
+export default async function Blog({
+searchParams,
+}: {
+searchParams: Promise<{ page?: string }>
+}) {
+const { page: pageParam } = await searchParams
+const page = Math.max(1, parseInt(pageParam ?? "1", 10) || 1)
+
 let posts: Post[] = []
+let totalPages = 1
+
 try {
 const resp = await fetch(
-"https://veter.es/wp-json/wp/v2/posts?per_page=12&_embed",
+`https://veter.es/wp-json/wp/v2/posts?per_page=${PER_PAGE}&page=${page}&_embed`,
 { next: { revalidate: 3600 } }
 )
+totalPages = parseInt(resp.headers.get("X-WP-TotalPages") ?? "1", 10)
 posts = await resp.json()
 } catch {
 // si wp esta caido mostramos lista vacia
@@ -45,7 +56,7 @@ return (
 <div className="max-w-6xl mx-auto px-4 py-16">
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {posts.map(post => {
-let img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
+const img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url
 const fecha = new Date(post.date).toLocaleDateString("es-ES", {
 day: "numeric", month: "long", year: "numeric"
 })
@@ -70,6 +81,29 @@ dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
 )
 })}
 </div>
+
+{/* paginacion */}
+{totalPages > 1 && (
+<div className="flex justify-center items-center gap-3 mt-14">
+{page > 1 && (
+<a href={`/blog?page=${page - 1}`}
+className="px-5 py-2 rounded-full text-sm font-semibold border-2 transition hover:bg-[#104766] hover:text-white"
+style={{ borderColor: "#104766", color: "#104766" }}>
+← Anterior
+</a>
+)}
+<span className="text-sm text-gray-500">
+Página {page} de {totalPages}
+</span>
+{page < totalPages && (
+<a href={`/blog?page=${page + 1}`}
+className="px-5 py-2 rounded-full text-sm font-semibold text-white transition hover:opacity-90"
+style={{ backgroundColor: "#104766" }}>
+Siguiente →
+</a>
+)}
+</div>
+)}
 </div>
 </div>
 )

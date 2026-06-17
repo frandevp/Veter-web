@@ -50,6 +50,19 @@ className="hover:text-[#ea4f4e] transition">Escríbenos por WhatsApp</a>
 <ContactoForm />
 
 </section>
+
+{/* google maps */}
+<div className="max-w-5xl mx-auto px-4 pb-16">
+<iframe
+src="https://maps.google.com/maps?q=36.7177,-4.2792&z=16&output=embed"
+width="100%"
+height="380"
+className="rounded-xl border-0 shadow-sm"
+loading="lazy"
+referrerPolicy="no-referrer-when-downgrade"
+title="Ubicación Veter Centro Veterinario"
+/>
+</div>
 </div>
 )
 }
