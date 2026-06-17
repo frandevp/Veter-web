@@ -1,3 +1,15 @@
+import type { Metadata } from "next"
+import Image from "next/image"
+
+export const metadata: Metadata = {
+title: "Nuestro Equipo Veterinario | Veter Rincón de la Victoria",
+description: "Conoce a nuestro equipo de veterinarios especializados. Más de 10 años de experiencia cuidando mascotas en Rincón de la Victoria, Málaga.",
+openGraph: {
+title: "Equipo Veterinario | Veter",
+description: "Profesionales apasionados por la salud animal en Rincón de la Victoria, Málaga.",
+},
+}
+
 // tampoco hay cpt equipo en wp, lo pongo a mano
 const vets = [
 {
@@ -40,7 +52,8 @@ Profesionales apasionados por la salud animal, con formación continua.
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 {vets.map(v => (
 <div key={v.nombre} className="flex gap-5 bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-<img src={v.foto} alt={v.nombre}
+<Image src={v.foto} alt={v.nombre}
+width={80} height={80}
 className="w-20 h-20 rounded-full object-cover shrink-0" />
 <div>
 <h2 className="font-bold text-lg" style={{ color: "#104766" }}>{v.nombre}</h2>

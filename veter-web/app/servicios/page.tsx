@@ -1,3 +1,14 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+title: "Servicios Veterinarios | Veter Rincón de la Victoria",
+description: "Consulta general, cirugía, vacunaciones, odontología, peluquería y más. Todos los servicios veterinarios bajo un mismo techo en Rincón de la Victoria, Málaga.",
+openGraph: {
+title: "Servicios Veterinarios | Veter Rincón de la Victoria",
+description: "Consulta general, cirugía, vacunaciones, odontología y más en Rincón de la Victoria, Málaga.",
+},
+}
+
 // hardcodeado — en wp no hay cpt para servicios
 const lista = [
 { titulo: "Consulta general", icono: "🩺", desc: "Revisiones y diagnósticos completos para perros, gatos y pequeños animales." },

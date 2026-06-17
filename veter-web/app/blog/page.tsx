@@ -1,5 +1,16 @@
-// fuerzo dynamic porque si no hace fetch en build y peta
-export const dynamic = "force-dynamic"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+title: "Blog Veterinario | Consejos y Salud Animal | Veter",
+description: "Artículos sobre salud animal, consejos veterinarios y cuidado de mascotas. Escritos por el equipo de Veter Centro Veterinario en Rincón de la Victoria, Málaga.",
+openGraph: {
+title: "Blog Veterinario | Veter",
+description: "Consejos de salud animal y cuidado de mascotas del equipo de Veter.",
+},
+}
+
+// revalidate cada hora en vez de force-dynamic
+export const revalidate = 3600
 
 type Post = {
 id: number

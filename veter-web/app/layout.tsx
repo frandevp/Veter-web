@@ -5,8 +5,47 @@ import "./globals.css"
 const font = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
 export const metadata: Metadata = {
-title: "Veter — Clínica Veterinaria en Rincón de la Victoria",
+metadataBase: new URL("https://veter-web.vercel.app"),
+title: {
+default: "Veter — Clínica Veterinaria en Rincón de la Victoria",
+template: "%s | Veter",
+},
 description: "Clínica veterinaria en Rincón de la Victoria, Málaga. Cuidamos de tu mascota con profesionalidad y cercanía.",
+openGraph: {
+type: "website",
+locale: "es_ES",
+siteName: "Veter Centro Veterinario",
+},
+}
+
+const jsonLdLocal = {
+"@context": "https://schema.org",
+"@type": "VeterinaryCare",
+name: "Veter Centro Veterinario",
+url: "https://veter-web.vercel.app",
+telephone: ["+34640995846", "+34951257388"],
+email: "hola@veter.es",
+address: {
+"@type": "PostalAddress",
+streetAddress: "Plaza del señorío, local 3",
+addressLocality: "Rincón de la Victoria",
+postalCode: "29730",
+addressCountry: "ES",
+addressRegion: "Málaga",
+},
+geo: {
+"@type": "GeoCoordinates",
+latitude: 36.7177,
+longitude: -4.2792,
+},
+openingHoursSpecification: [
+{
+"@type": "OpeningHoursSpecification",
+dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+opens: "09:00",
+closes: "20:00",
+},
+],
 }
 
 const navLinks = [
@@ -23,6 +62,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 return (
 <html lang="es">
 <body className={font.className}>
+<script
+type="application/ld+json"
+dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocal) }}
+/>
 
 <header className="bg-white shadow-sm sticky top-0 z-50">
 <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">

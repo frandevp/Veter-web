@@ -1,3 +1,4 @@
+import Image from "next/image"
 import HeroSlider from "./components/HeroSlider"
 import ReviewsCarousel from "./components/ReviewsCarousel"
 
@@ -87,10 +88,13 @@ Nuestro objetivo es ofrecer la mejor atención médica a tus mascotas, con un tr
 ))}
 </ul>
 </div>
-<img src="/images/sobre-veter.png"
+<div className="relative w-full aspect-square">
+<Image src="/images/sobre-veter.png"
 alt="Veter Centro Veterinario"
-className="w-full object-cover"
+fill className="object-cover"
+sizes="(max-width: 768px) 100vw, 50vw"
 style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
+</div>
 </section>
 
 {/* 3 columnas con imagenes de wp */}
@@ -101,7 +105,10 @@ style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
 <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
 {diferencias.map(d => (
 <div key={d.titulo} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-<img src={d.img} alt={d.titulo} className="w-full h-52 object-cover" />
+<div className="relative w-full h-52">
+<Image src={d.img} alt={d.titulo} fill className="object-cover"
+sizes="(max-width: 768px) 100vw, 33vw" />
+</div>
 <div className="p-6">
 <h3 className="font-bold text-lg mb-2" style={{ color: "#ea4f4e" }}>{d.titulo}</h3>
 <p className="text-gray-500 text-sm leading-relaxed">{d.desc}</p>
@@ -115,9 +122,13 @@ style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
 {/* rejilla servicios */}
 <section className="py-24 px-4">
 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<img src="/images/O0A0940-scaled.jpg"
-alt="Servicios veterinarios" className="w-full h-[480px] object-cover object-top"
+<div className="relative w-full h-[480px]">
+<Image src="/images/O0A0940-scaled.jpg"
+alt="Servicios veterinarios" fill
+className="object-cover object-top"
+sizes="(max-width: 768px) 100vw, 50vw"
 style={{ borderRadius: "42% 58% 55% 45% / 48% 40% 60% 52%" }} />
+</div>
 <div>
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Lo que ofrecemos</p>
 <h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Nuestros Servicios</h2>
@@ -192,7 +203,10 @@ return (
 <a href={`/blog/${post.slug}`} key={post.id}
 className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition group block">
 {img && (
-<img src={img} alt="" className="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+<div className="relative w-full h-44 overflow-hidden">
+<Image src={img} alt="" fill className="object-cover group-hover:scale-105 transition duration-300"
+sizes="(max-width: 768px) 100vw, 33vw" />
+</div>
 )}
 <div className="p-5">
 <p className="text-xs text-gray-400 mb-2">{fecha}</p>
