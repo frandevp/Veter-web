@@ -35,16 +35,15 @@ desc: "Planes de Salud. Citas para el mismo día o para día siguiente. Abierto 
 },
 ]
 
-// los servicios que aparecen en la rejilla
 const servicios = [
-{ icono: "💉", nombre: "Vacunaciones" },
-{ icono: "🔬", nombre: "Análisis Clínicos" },
-{ icono: "🏥", nombre: "Cirugía" },
-{ icono: "🦷", nombre: "Odontología" },
-{ icono: "🐾", nombre: "Consulta General" },
-{ icono: "🩺", nombre: "Ecografía" },
-{ icono: "💊", nombre: "Farmacia" },
-{ icono: "✂️", nombre: "Peluquería" },
+{ nombre: "Consultas generales" },
+{ nombre: "Vacunas" },
+{ nombre: "Cachorros" },
+{ nombre: "Castraciones" },
+{ nombre: "Cuidado dental" },
+{ nombre: "Exámenes de laboratorio" },
+{ nombre: "Hospitalización" },
+{ nombre: "Cirugías" },
 ]
 
 export default async function Home() {
@@ -76,10 +75,10 @@ Nuestro objetivo es ofrecer la mejor atención médica a tus mascotas, con un tr
 </p>
 <ul className="space-y-3 text-gray-600 text-sm">
 {[
-"Equipo veterinario con más de 10 años de experiencia",
-"Instalaciones modernas y equipadas",
-"Servicio de urgencias y atención continuada",
-"Seguimiento personalizado de cada paciente",
+"Veterinarios certificados",
+"Más de 20 años de experiencia",
+"Medicina interna, diagnósticos y tratamientos",
+"Lugar acogedor y cercano",
 ].map(p => (
 <li key={p} className="flex items-start gap-2">
 <span style={{ color: "#ea4f4e" }} className="mt-0.5">✓</span>
@@ -130,13 +129,13 @@ sizes="(max-width: 768px) 100vw, 50vw"
 style={{ borderRadius: "42% 58% 55% 45% / 48% 40% 60% 52%" }} />
 </div>
 <div>
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Lo que ofrecemos</p>
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>¿Qué hacemos?</p>
 <h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Nuestros Servicios</h2>
 <div className="grid grid-cols-2 gap-4">
 {servicios.map(s => (
 <div key={s.nombre}
 className="flex items-center gap-3 p-4 rounded-xl border border-gray-100 bg-white hover:border-[#ea4f4e] transition">
-<span className="text-2xl">{s.icono}</span>
+<span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#ea4f4e" }} />
 <span className="font-medium text-sm" style={{ color: "#104766" }}>{s.nombre}</span>
 </div>
 ))}
@@ -169,6 +168,60 @@ Ver todos nuestros servicios
 </div>
 </section>
 
+
+{/* donde estamos */}
+<section className="py-24 px-4 bg-gray-50">
+<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Encuéntranos</p>
+<h2 className="text-3xl font-bold mb-2" style={{ color: "#104766" }}>¿Dónde estamos?</h2>
+<p className="text-lg font-medium mb-2" style={{ color: "#104766" }}>La mejor ubicación</p>
+<p className="text-gray-500 mb-6">Justo cuando nos necesites</p>
+<div className="space-y-3 text-sm text-gray-600">
+<p><strong style={{ color: "#104766" }}>Dirección</strong><br />Plaza del señorío, local 3, frente a la Notaría<br />Rincón de la Victoria, 29730, Málaga</p>
+<p><strong style={{ color: "#104766" }}>Teléfonos</strong><br />+34 640 995 846 · +34 951 25 73 88</p>
+<p><strong style={{ color: "#104766" }}>Horario</strong><br />Lunes a Viernes: 09:00 – 20:00 h</p>
+</div>
+</div>
+<div>
+<iframe
+src="https://maps.google.com/maps?q=36.7177,-4.2792&z=16&output=embed"
+width="100%"
+height="380"
+className="rounded-xl border-0 shadow-sm"
+loading="lazy"
+referrerPolicy="no-referrer-when-downgrade"
+title="Ubicación Veter Centro Veterinario"
+/>
+</div>
+</div>
+</section>
+
+{/* cta contacto */}
+<section style={{ backgroundColor: "#104766" }} className="py-20 px-4 text-white text-center">
+<h2 className="text-white text-3xl font-bold mb-3">¿Listo para un gran cuidado veterinario?</h2>
+<p className="text-blue-200 mb-10">¿Necesitas atención lo antes posible? ¡Llámanos ahora!</p>
+<div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-10">
+<div>
+<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Teléfonos</p>
+<p className="text-white font-semibold">+34 640 995 846</p>
+<p className="text-white font-semibold">+34 951 25 73 88</p>
+</div>
+<div>
+<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Dirección</p>
+<p className="text-white">Plaza del señorío, local 3<br />Rincón de la Victoria, 29730</p>
+</div>
+<div>
+<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Email</p>
+<p className="text-white">hola@veter.es</p>
+</div>
+</div>
+<a href="https://wa.me/message/QSHQLWTJJJYDI1" target="_blank" rel="noopener noreferrer"
+className="inline-block text-white font-semibold px-8 py-3 rounded-full hover:opacity-90 transition"
+style={{ backgroundColor: "#ea4f4e" }}>
+Hacer una Cita
+</a>
+</section>
 
 {/* datos de contacto rapido */}
 <section className="py-20 px-4 bg-gray-50">

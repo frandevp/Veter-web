@@ -5,6 +5,8 @@ const navLinks = [
 { href: "/", label: "Home" },
 { href: "/equipo", label: "Equipo" },
 { href: "/servicios", label: "Consultas" },
+{ href: "/cirugia-general", label: "Cirugía General" },
+{ href: "/medicina-preventiva", label: "Medicina Preventiva" },
 { href: "/blog", label: "Blog" },
 { href: "/contacto", label: "Contacto" },
 ]
