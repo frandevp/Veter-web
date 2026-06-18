@@ -58,12 +58,9 @@ desc: "Citas para el mismo día o el día siguiente. Abiertos hasta las 20:00 h 
 
 const razones = [
 { stat: "20+", label: "Años de experiencia combinada" },
-{ stat: "5", label: "Seguros veterinarios aceptados" },
 { stat: "2", label: "Teléfonos de contacto directo" },
 { stat: "20:00h", label: "Horario de cierre de lunes a viernes" },
 ]
-
-const seguros = ["Asisa", "Adeslas", "Assa", "Caser", "Divina"]
 
 export default function Equipo() {
 return (
@@ -132,20 +129,6 @@ style={{ backgroundColor: "#104766" }}>
 <p className="text-sm text-gray-500 leading-tight">{r.label}</p>
 </div>
 ))}
-</div>
-
-<div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Seguros aceptados</p>
-<h3 className="text-xl font-bold mb-6" style={{ color: "#104766" }}>Trabajamos con los principales seguros veterinarios</h3>
-<div className="flex flex-wrap gap-3">
-{seguros.map(s => (
-<span key={s} className="px-4 py-2 rounded-full text-sm font-semibold border-2"
-style={{ borderColor: "#104766", color: "#104766" }}>
-{s}
-</span>
-))}
-</div>
-<p className="text-gray-500 text-sm mt-4">¿Tienes otro seguro? Consúltanos, trabajamos con más aseguradoras.</p>
 </div>
 </div>
 </section>
