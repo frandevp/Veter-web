@@ -56,12 +56,6 @@ desc: "Citas para el mismo día o el día siguiente. Abiertos hasta las 20:00 h 
 },
 ]
 
-const razones = [
-{ stat: "20+", label: "Años de experiencia combinada" },
-{ stat: "2", label: "Teléfonos de contacto directo" },
-{ stat: "20:00h", label: "Horario de cierre de lunes a viernes" },
-]
-
 export default function Equipo() {
 return (
 <div>
@@ -117,21 +111,6 @@ style={{ backgroundColor: "#104766" }}>
 </div>
 </div>
 </div>
-
-<section className="bg-gray-50 py-16 px-4">
-<div className="max-w-5xl mx-auto">
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Por qué elegirnos</p>
-<h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Veter en números</h2>
-<div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
-{razones.map(r => (
-<div key={r.label} className="text-center">
-<p className="text-4xl font-bold mb-2" style={{ color: "#ea4f4e" }}>{r.stat}</p>
-<p className="text-sm text-gray-500 leading-tight">{r.label}</p>
-</div>
-))}
-</div>
-</div>
-</section>
 
 <section style={{ backgroundColor: "#104766" }} className="py-14 px-4 text-center text-white">
 <h2 className="text-white text-2xl font-bold mb-3">¿Tienes alguna pregunta para el equipo?</h2>
