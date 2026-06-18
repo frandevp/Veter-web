@@ -237,52 +237,6 @@ title="Ubicación Veter Centro Veterinario"
 </div>
 </section>
 
-{/* cta contacto */}
-<section style={{ backgroundColor: "#104766" }} className="py-20 px-4 text-white text-center">
-<h2 className="text-white text-3xl font-bold mb-3">¿Listo para un gran cuidado veterinario?</h2>
-<p className="text-blue-200 mb-10">¿Necesitas atención lo antes posible? ¡Llámanos ahora!</p>
-<div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-10">
-<div>
-<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Teléfonos</p>
-<p className="text-white font-semibold">+34 640 995 846</p>
-<p className="text-white font-semibold">+34 951 25 73 88</p>
-</div>
-<div>
-<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Dirección</p>
-<p className="text-white">Plaza del señorío, local 3<br />Rincón de la Victoria, 29730</p>
-</div>
-<div>
-<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Email</p>
-<p className="text-white">hola@veter.es</p>
-</div>
-</div>
-<a href="https://wa.me/message/QSHQLWTJJJYDI1" target="_blank" rel="noopener noreferrer"
-className="inline-block text-white font-semibold px-8 py-3 rounded-full hover:opacity-90 transition"
-style={{ backgroundColor: "#ea4f4e" }}>
-Hacer una Cita
-</a>
-</section>
-
-{/* datos de contacto rapido */}
-<section className="py-20 px-4 bg-gray-50">
-<div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-<div>
-<p className="text-3xl mb-3">📞</p>
-<h4 className="font-bold mb-2" style={{ color: "#104766" }}>Teléfonos</h4>
-<p className="text-gray-600 text-sm leading-relaxed">+34 640 995 846<br />+34 951 25 73 88</p>
-</div>
-<div>
-<p className="text-3xl mb-3">📍</p>
-<h4 className="font-bold mb-2" style={{ color: "#104766" }}>Dirección</h4>
-<p className="text-gray-600 text-sm leading-relaxed">Plaza del señorío, local 3<br />Rincón de la Victoria, 29730</p>
-</div>
-<div>
-<p className="text-3xl mb-3">✉️</p>
-<h4 className="font-bold mb-2" style={{ color: "#104766" }}>Email</h4>
-<p className="text-gray-600 text-sm">hola@veter.es</p>
-</div>
-</div>
-</section>
 
 {posts.length > 0 && (
 <section className="py-20 px-4">
