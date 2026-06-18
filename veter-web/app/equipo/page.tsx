@@ -1,13 +1,37 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-title: "Nuestro Equipo Veterinario | Veter Rincón de la Victoria",
-description: "Conoce al equipo de Veter Centro Veterinario en Rincón de la Victoria, Málaga. Más de 20 años de experiencia combinada cuidando perros, gatos y otras mascotas con cercanía y excelencia.",
+title: "Nuestro Equipo | Veter Centro Veterinario Rincón de la Victoria",
+description: "Conoce al equipo de Veter Centro Veterinario en Rincón de la Victoria, Málaga. Dra. Celeste Trevisi y un equipo comprometido con la salud animal y la experiencia de cada visita.",
 openGraph: {
 title: "Equipo Veterinario | Veter",
-description: "Profesionales apasionados por la salud animal, con formación continua y más de 20 años de experiencia en Rincón de la Victoria, Málaga.",
+description: "La Dra. Celeste Trevisi y el equipo de Veter Centro Veterinario en Rincón de la Victoria, Málaga.",
 },
 }
+
+const equipo = [
+{
+nombre: "Dra. Celeste Trevisi",
+rol: "Directora Veterinaria",
+especialidad: "Medicina Interna · Cirugía General",
+desc: "Celeste dirige el centro con una visión clara: que cada visita sea una experiencia positiva para la mascota y para su familia. Su formación en medicina interna y cirugía general le permite abordar casos complejos con precisión y cercanía.",
+inicial: "C",
+},
+{
+nombre: "Francisca Maria Hevilla",
+rol: "Administración",
+especialidad: "Gestión y atención al cliente",
+desc: "Francisca es la primera persona que te recibe cuando llegas a Veter. Se encarga de la gestión de citas, la coordinación del centro y de que cada visita fluya sin problemas. Su trato amable hace que la experiencia empiece bien desde el primer momento.",
+inicial: "F",
+},
+{
+nombre: "Francesca Lombardo",
+rol: "Redes Sociales",
+especialidad: "Comunicación y comunidad digital",
+desc: "Francesca es quien da voz a Veter en redes sociales. Se encarga de compartir consejos, noticias y el día a día de la clínica para mantener informada y conectada a la comunidad de dueños de mascotas.",
+inicial: "F",
+},
+]
 
 const valores = [
 {
@@ -23,7 +47,7 @@ desc: "Sabemos que tu mascota es parte de la familia. Explicamos cada paso, reso
 {
 icono: "📚",
 titulo: "Formación continua",
-desc: "El equipo se forma de manera constante en las últimas técnicas y tratamientos veterinarios para ofrecerte siempre lo mejor.",
+desc: "El equipo se forma de manera constante en las últimas técnicas y tratamientos para ofrecerte siempre lo mejor.",
 },
 {
 icono: "⚡",
@@ -33,22 +57,10 @@ desc: "Citas para el mismo día o el día siguiente. Abiertos hasta las 20:00 h 
 ]
 
 const razones = [
-{
-stat: "20+",
-label: "Años de experiencia combinada",
-},
-{
-stat: "5",
-label: "Seguros veterinarios aceptados",
-},
-{
-stat: "2",
-label: "Teléfonos de contacto directo",
-},
-{
-stat: "20:00h",
-label: "Horario de cierre de lunes a viernes",
-},
+{ stat: "20+", label: "Años de experiencia combinada" },
+{ stat: "5", label: "Seguros veterinarios aceptados" },
+{ stat: "2", label: "Teléfonos de contacto directo" },
+{ stat: "20:00h", label: "Horario de cierre de lunes a viernes" },
 ]
 
 const seguros = ["Asisa", "Adeslas", "Assa", "Caser", "Divina"]
@@ -65,17 +77,35 @@ Profesionales comprometidos con la salud animal. Cercanía, empatía y excelenci
 </section>
 
 <section className="max-w-5xl mx-auto px-4 py-20">
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Quiénes somos</p>
-<h2 className="text-3xl font-bold mb-6" style={{ color: "#104766" }}>Un centro diseñado para ti y tu peludo</h2>
-<p className="text-gray-600 leading-relaxed mb-4 max-w-3xl">
-En Veter llevamos más de 20 años cuidando mascotas en Rincón de la Victoria. Somos un equipo de veterinarios con formación especializada y, sobre todo, con vocación real por los animales. Cada consulta, cada diagnóstico y cada cirugía la afrontamos con la misma dedicación: como si fuera nuestra propia mascota.
-</p>
-<p className="text-gray-600 leading-relaxed max-w-3xl">
-Nuestra filosofía se resume en tres palabras: <strong style={{ color: "#104766" }}>cercanía, empatía y excelencia</strong>. No solo tratamos enfermedades — acompañamos a las familias, explicamos cada paso y nos aseguramos de que tanto tú como tu mascota os sintáis en buenas manos.
-</p>
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Nuestra misión</p>
+<h2 className="text-3xl font-bold mb-8" style={{ color: "#104766" }}>¿Quiénes somos?</h2>
+<blockquote className="border-l-4 pl-6 italic text-gray-600 leading-relaxed text-lg max-w-3xl" style={{ borderColor: "#ea4f4e" }}>
+"En Veter Centro Veterinario, nuestra misión es brindar una atención y experiencia excepcional para las mascotas y sus padres y al mismo tiempo crear el mejor ambiente posible para los miembros de nuestro equipo. Perseguimos nuestra misión de todo corazón, innovando constantemente en un entorno feliz y libre de estrés para perros y gatos. Nos dedicamos a mimar a los dueños de mascotas, asegurándonos de que cada visita sea una experiencia positiva y tranquilizadora. Además, estamos comprometidos a crear un lugar increíble para que los veterinarios busquen su realización profesional y personal, fomentando un ambiente de crecimiento y satisfacción laboral."
+</blockquote>
 </section>
 
 <div className="bg-gray-50 py-16 px-4">
+<div className="max-w-5xl mx-auto">
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>El equipo</p>
+<h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Las personas detrás de Veter</h2>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+{equipo.map(m => (
+<div key={m.nombre} className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition flex flex-col">
+<div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-5 shrink-0"
+style={{ backgroundColor: "#104766" }}>
+{m.inicial}
+</div>
+<h3 className="font-bold text-lg mb-1" style={{ color: "#104766" }}>{m.nombre}</h3>
+<p className="text-sm font-semibold mb-1" style={{ color: "#ea4f4e" }}>{m.rol}</p>
+<p className="text-xs text-gray-400 mb-4">{m.especialidad}</p>
+<p className="text-gray-500 text-sm leading-relaxed">{m.desc}</p>
+</div>
+))}
+</div>
+</div>
+</div>
+
+<div className="py-16 px-4">
 <div className="max-w-5xl mx-auto">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Nuestra forma de trabajar</p>
 <h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Lo que nos define</h2>
@@ -91,7 +121,8 @@ Nuestra filosofía se resume en tres palabras: <strong style={{ color: "#104766"
 </div>
 </div>
 
-<section className="max-w-5xl mx-auto px-4 py-20">
+<section className="bg-gray-50 py-16 px-4">
+<div className="max-w-5xl mx-auto">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Por qué elegirnos</p>
 <h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Veter en números</h2>
 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
@@ -103,7 +134,7 @@ Nuestra filosofía se resume en tres palabras: <strong style={{ color: "#104766"
 ))}
 </div>
 
-<div className="bg-gray-50 rounded-2xl p-8">
+<div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Seguros aceptados</p>
 <h3 className="text-xl font-bold mb-6" style={{ color: "#104766" }}>Trabajamos con los principales seguros veterinarios</h3>
 <div className="flex flex-wrap gap-3">
@@ -115,6 +146,7 @@ style={{ borderColor: "#104766", color: "#104766" }}>
 ))}
 </div>
 <p className="text-gray-500 text-sm mt-4">¿Tienes otro seguro? Consúltanos, trabajamos con más aseguradoras.</p>
+</div>
 </div>
 </section>
 
