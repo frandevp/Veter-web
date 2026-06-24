@@ -71,7 +71,7 @@ className="object-cover"
 </section>
 
 {/* === SECCIÓN EQUIPO REDISEÑADA === */}
-<div className="relative bg-gray-50 py-20 px-4 overflow-hidden">
+<div className="relative bg-gray-50 pt-20 pb-10 px-4 overflow-hidden">
 
 {/* Ilustración decorativa flotante — esquina superior derecha */}
 <div className="absolute top-8 right-0 w-52 md:w-72 opacity-10 pointer-events-none select-none" aria-hidden="true">
@@ -204,7 +204,7 @@ Francesca es quien da voz a Veter en redes sociales. Comparte consejos, noticias
 </div>
 
 {/* Valores — rediseño */}
-<div style={{ backgroundColor: "#f8fafc" }} className="py-20 px-4">
+<div style={{ backgroundColor: "#f8fafc" }} className="pt-10 pb-20 px-4">
 <div className="max-w-5xl mx-auto">
 
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Nuestra forma de trabajar</p>
