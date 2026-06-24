@@ -156,7 +156,7 @@ style={{ borderRadius: "55% 45% 38% 62% / 48% 58% 42% 52%", objectFit: "cover" }
 />
 </div>
 <Image
-src="/images/ilustracion-veter.jpeg"
+src="/images/ilustracion-veter.png"
 alt="Your pet is always better with Veter"
 width={420}
 height={420}
