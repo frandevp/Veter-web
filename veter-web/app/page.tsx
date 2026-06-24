@@ -36,14 +36,17 @@ desc: "Planes de Salud. Citas para el mismo día o para día siguiente. Abierto 
 ]
 
 const servicios = [
-{ nombre: "Consultas generales" },
-{ nombre: "Vacunas" },
-{ nombre: "Cachorros" },
-{ nombre: "Castraciones" },
-{ nombre: "Cuidado dental" },
-{ nombre: "Exámenes de laboratorio" },
+{ nombre: "Medicina Interna" },
+{ nombre: "Diagnóstico por Imagen" },
+{ nombre: "Pruebas Laboratorio" },
+{ nombre: "Cirugía General" },
+{ nombre: "Traumatología" },
+{ nombre: "Odontología" },
 { nombre: "Hospitalización" },
-{ nombre: "Cirugías" },
+{ nombre: "Identificación" },
+{ nombre: "Oftalmología" },
+{ nombre: "Oncología" },
+{ nombre: "Documentos de Viaje" },
 ]
 
 const testimonios = [
