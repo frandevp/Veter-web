@@ -163,13 +163,41 @@ Ver todos nuestros servicios
 <ReviewsCarousel />
 
 {/* testimonios reales */}
-<section className="bg-gray-50 py-20 px-4">
-<div className="max-w-5xl mx-auto">
+<section className="bg-gray-50 py-24 px-4 overflow-hidden">
+<div className="max-w-6xl mx-auto">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3 text-center" style={{ color: "#ea4f4e" }}>Lo que dicen</p>
-<h2 className="text-3xl font-bold text-center mb-12" style={{ color: "#104766" }}>¿Por qué los padres de mascotas aman a Veter?</h2>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<h2 className="text-3xl font-bold text-center mb-16" style={{ color: "#104766" }}>¿Por qué los padres de mascotas aman a Veter?</h2>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+{/* imagen blob */}
+<div className="flex justify-center">
+<div className="relative w-[340px] h-[380px] shrink-0">
+{/* mancha de color detras del blob para dar profundidad */}
+<div className="absolute -bottom-4 -right-4 w-[320px] h-[360px] opacity-20 rounded-full"
+style={{
+backgroundColor: "#ea4f4e",
+borderRadius: "72% 28% 38% 62% / 55% 67% 33% 45%",
+}} />
+<Image
+src="/images/clientes.jpg"
+alt="Clientes satisfechos de Veter Centro Veterinario"
+width={340}
+height={380}
+className="object-cover w-full h-full"
+style={{
+borderRadius: "72% 28% 38% 62% / 55% 67% 33% 45%",
+objectPosition: "center top",
+}}
+sizes="340px"
+/>
+</div>
+</div>
+
+{/* tarjetas de testimonios */}
+<div className="flex flex-col gap-5">
 {testimonios.map(t => (
-<div key={t.autor} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col gap-5">
+<div key={t.autor} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex flex-col gap-4">
 <div className="flex gap-1">
 {[...Array(5)].map((_, i) => (
 <svg key={i} className="w-4 h-4" fill="#ea4f4e" viewBox="0 0 20 20">
@@ -177,7 +205,7 @@ Ver todos nuestros servicios
 </svg>
 ))}
 </div>
-<p className="text-gray-600 text-sm leading-relaxed italic flex-1">"{t.texto}"</p>
+<p className="text-gray-600 text-sm leading-relaxed italic">"{t.texto}"</p>
 <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
 <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
 style={{ backgroundColor: "#104766" }}>
@@ -187,6 +215,8 @@ style={{ backgroundColor: "#104766" }}>
 </div>
 </div>
 ))}
+</div>
+
 </div>
 </div>
 </section>
@@ -237,6 +267,52 @@ title="Ubicación Veter Centro Veterinario"
 </div>
 </section>
 
+{/* cta contacto */}
+<section style={{ backgroundColor: "#104766" }} className="py-20 px-4 text-white text-center">
+<h2 className="text-white text-3xl font-bold mb-3">¿Listo para un gran cuidado veterinario?</h2>
+<p className="text-blue-200 mb-10">¿Necesitas atención lo antes posible? ¡Llámanos ahora!</p>
+<div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-10">
+<div>
+<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Teléfonos</p>
+<p className="text-white font-semibold">+34 640 995 846</p>
+<p className="text-white font-semibold">+34 951 25 73 88</p>
+</div>
+<div>
+<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Dirección</p>
+<p className="text-white">Plaza del señorío, local 3<br />Rincón de la Victoria, 29730</p>
+</div>
+<div>
+<p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-2">Email</p>
+<p className="text-white">hola@veter.es</p>
+</div>
+</div>
+<a href="https://wa.me/message/QSHQLWTJJJYDI1" target="_blank" rel="noopener noreferrer"
+className="inline-block text-white font-semibold px-8 py-3 rounded-full hover:opacity-90 transition"
+style={{ backgroundColor: "#ea4f4e" }}>
+Hacer una Cita
+</a>
+</section>
+
+{/* datos de contacto rapido */}
+<section className="py-20 px-4 bg-gray-50">
+<div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+<div>
+<p className="text-3xl mb-3">📞</p>
+<h4 className="font-bold mb-2" style={{ color: "#104766" }}>Teléfonos</h4>
+<p className="text-gray-600 text-sm leading-relaxed">+34 640 995 846<br />+34 951 25 73 88</p>
+</div>
+<div>
+<p className="text-3xl mb-3">📍</p>
+<h4 className="font-bold mb-2" style={{ color: "#104766" }}>Dirección</h4>
+<p className="text-gray-600 text-sm leading-relaxed">Plaza del señorío, local 3<br />Rincón de la Victoria, 29730</p>
+</div>
+<div>
+<p className="text-3xl mb-3">✉️</p>
+<h4 className="font-bold mb-2" style={{ color: "#104766" }}>Email</h4>
+<p className="text-gray-600 text-sm">hola@veter.es</p>
+</div>
+</div>
+</section>
 
 {posts.length > 0 && (
 <section className="py-20 px-4">
