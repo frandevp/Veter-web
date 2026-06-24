@@ -123,13 +123,13 @@ Nuestro enfoque
 <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={{ color: "#104766" }}>
 Cuando tu mascota necesita operarse
 </h2>
-<p className="text-gray-500 text-base leading-relaxed mb-4">
+<p className="text-gray-500 text-base leading-relaxed mb-4 text-justify">
 Sabemos que la palabra "cirugía" puede generar inquietud. Por eso trabajamos de una forma muy concreta: primero entendemos bien el caso, luego planificamos con cuidado y, solo entonces, intervenimos. No hay prisas innecesarias ni decisiones tomadas a la ligera.
 </p>
-<p className="text-gray-500 text-base leading-relaxed mb-4">
+<p className="text-gray-500 text-base leading-relaxed mb-4 text-justify">
 En Veter llevamos a cabo tanto intervenciones de rutina — como esterilizaciones — como cirugías más complejas que requieren una evaluación previa más detallada. En todos los casos el protocolo es el mismo: analítica preoperatoria, anestesia monitoreada y seguimiento cercano después de la operación.
 </p>
-<p className="text-gray-500 text-base leading-relaxed">
+<p className="text-gray-500 text-base leading-relaxed text-justify">
 La Dra. Celeste Trevisi, con formación en medicina interna y cirugía general, lleva personalmente los casos quirúrgicos del centro. Si tienes dudas sobre si tu mascota necesita una intervención, la consulta previa es el primer paso y no compromete a nada.
 </p>
 </div>
@@ -154,7 +154,7 @@ style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 <section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
 <div className="max-w-4xl mx-auto">
 
-<div className="flex items-center justify-between mb-12">
+<div className="flex items-center justify-between mb-6">
 <div>
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
 Qué realizamos
