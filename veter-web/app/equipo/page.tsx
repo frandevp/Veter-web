@@ -69,11 +69,23 @@ Profesionales comprometidos con la salud animal. Cercanía, empatía y excelenci
 </section>
 
 <section className="max-w-5xl mx-auto px-4 py-20">
+<div className="flex flex-col md:flex-row gap-12 items-center">
+<div className="flex-1">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Nuestra misión</p>
 <h2 className="text-3xl font-bold mb-8" style={{ color: "#104766" }}>¿Quiénes somos?</h2>
-<blockquote className="border-l-4 pl-6 italic text-gray-600 leading-relaxed text-lg max-w-3xl" style={{ borderColor: "#ea4f4e" }}>
+<blockquote className="border-l-4 pl-6 italic text-gray-600 leading-relaxed text-lg" style={{ borderColor: "#ea4f4e" }}>
 "En Veter Centro Veterinario, nuestra misión es brindar una atención y experiencia excepcional para las mascotas y sus padres y al mismo tiempo crear el mejor ambiente posible para los miembros de nuestro equipo. Perseguimos nuestra misión de todo corazón, innovando constantemente en un entorno feliz y libre de estrés para perros y gatos. Nos dedicamos a mimar a los dueños de mascotas, asegurándonos de que cada visita sea una experiencia positiva y tranquilizadora. Además, estamos comprometidos a crear un lugar increíble para que los veterinarios busquen su realización profesional y personal, fomentando un ambiente de crecimiento y satisfacción laboral."
 </blockquote>
+</div>
+<div className="flex-1 relative h-72 md:h-96 w-full rounded-2xl overflow-hidden shadow-lg">
+<Image
+src="/equipo/clinica.png"
+alt="Clínica Veter Centro Veterinario"
+fill
+className="object-cover"
+/>
+</div>
+</div>
 </section>
 
 <div className="bg-gray-50 py-16 px-4">
