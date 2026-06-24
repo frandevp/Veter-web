@@ -142,7 +142,8 @@ style={{ color: e.acento, opacity: 0.4 }} aria-hidden="true">{e.num}</span>
 </div>
 </div>
 
-<div className="flex-shrink-0 w-full md:w-[420px] relative self-start mt-4 md:mt-0">
+<div className="flex-shrink-0 w-full md:w-[420px] flex flex-col gap-6 self-start mt-4 md:mt-0">
+<div className="relative">
 <div className="absolute -bottom-5 -right-5 w-full h-full pointer-events-none"
 style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "55% 45% 38% 62% / 48% 58% 42% 52%" }} />
 <Image
@@ -152,6 +153,15 @@ width={420}
 height={560}
 className="w-full h-auto relative z-10"
 style={{ borderRadius: "55% 45% 38% 62% / 48% 58% 42% 52%", objectFit: "cover" }}
+/>
+</div>
+<Image
+src="/images/ilustracion-veter.jpeg"
+alt="Your pet is always better with Veter"
+width={420}
+height={420}
+className="w-full h-auto"
+aria-hidden="true"
 />
 </div>
 
