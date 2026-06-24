@@ -86,7 +86,23 @@ style={{ backgroundColor: "#25D366" }}>
 WhatsApp
 </a>
 
-<footer style={{ backgroundColor: "#104766" }} className="text-white mt-16">
+{/* marquee de palabras */}
+<div style={{ backgroundColor: "#104766" }} className="overflow-hidden py-4 select-none">
+<div className="flex whitespace-nowrap animate-marquee">
+{[
+"Salud Animal","·","Confianza","·","Cercanía","·","Diagnóstico preciso","·",
+"Bienestar","·","Prevención","·","Amor por los animales","·","Trato cercano","·",
+"Salud Animal","·","Confianza","·","Cercanía","·","Diagnóstico preciso","·",
+"Bienestar","·","Prevención","·","Amor por los animales","·","Trato cercano","·",
+].map((w, i) => (
+<span key={i} className={`mx-4 text-sm font-semibold uppercase tracking-widest ${w === "·" ? "opacity-30 text-white" : "text-[#ea4f4e]"}`}>
+{w}
+</span>
+))}
+</div>
+</div>
+
+<footer style={{ backgroundColor: "#104766" }} className="text-white">
 <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
 
 <div>
