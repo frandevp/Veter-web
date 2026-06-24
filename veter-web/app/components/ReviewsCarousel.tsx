@@ -92,7 +92,7 @@ return (
 <p className="font-bold text-sm leading-tight mb-1" style={{ color: "#104766" }}>Veter Centro Veterinario</p>
 <div className="flex gap-0.5 text-yellow-400 text-lg mb-1">★★★★★</div>
 <p className="text-xs text-gray-500 mb-4">83 reseñas Google</p>
-<a href="https://g.page/r/veter-rincon" target="_blank" rel="noopener noreferrer"
+<a href="https://www.google.com/maps/place/Veter+Centro+Veterinario/@36.716649,-4.2850412,17z/data=!3m1!4b1!4m6!3m5!1s0xd725be46693659b:0xd3cefc9bdd109a91!8m2!3d36.7166447!4d-4.2824663!16s%2Fg%2F11vjnwcxk4?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"
 className="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition"
 style={{ color: "#104766" }}>
 Escribe una reseña
