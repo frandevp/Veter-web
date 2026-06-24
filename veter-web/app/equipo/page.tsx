@@ -23,14 +23,14 @@ nombre: "Francisca Maria Hevilla",
 rol: "Administración",
 especialidad: "Gestión y atención al cliente",
 desc: "Francisca es la primera persona que te recibe cuando llegas a Veter. Se encarga de la gestión de citas, la coordinación del centro y de que cada visita fluya sin problemas. Su trato amable hace que la experiencia empiece bien desde el primer momento.",
-foto: "/equipo/administracion.png",
+foto: "/equipo/administracion.jpg",
 },
 {
 nombre: "Francesca Lombardo",
 rol: "Redes Sociales",
 especialidad: "Comunicación y comunidad digital",
 desc: "Francesca es quien da voz a Veter en redes sociales. Se encarga de compartir consejos, noticias y el día a día de la clínica para mantener informada y conectada a la comunidad de dueños de mascotas.",
-foto: "/equipo/marketing.png",
+foto: "/equipo/marketing.jpg",
 },
 ]
 
@@ -83,13 +83,12 @@ Profesionales comprometidos con la salud animal. Cercanía, empatía y excelenci
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {equipo.map(m => (
 <div key={m.nombre} className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition flex flex-col">
-<div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+<div className="relative w-full h-72 overflow-hidden">
 <Image
 src={m.foto}
 alt={m.nombre}
-width={400}
-height={300}
-className="w-full h-full object-cover object-top"
+fill
+className="object-cover object-top"
 />
 </div>
 <div className="p-6 flex flex-col flex-1">
