@@ -61,8 +61,8 @@ Profesionales comprometidos con la salud animal. Cercanía, empatía y excelenci
 </div>
 <div className="flex-1 relative h-72 md:h-96 w-full rounded-2xl overflow-hidden shadow-lg">
 <Image
-src="/equipo/clinica.png"
-alt="Clínica Veter Centro Veterinario"
+src="/equipo/quienes-somos.jpg"
+alt="Dra. Celeste con un perro en Veter Centro Veterinario"
 fill
 className="object-cover"
 />
