@@ -122,12 +122,12 @@ Directora
 Dra. Celeste Trevisi
 </h3>
 <p className="text-sm font-semibold mb-5" style={{ color: "#ea4f4e" }}>
-Medicina Interna · Cirugía General
+Medicina Interna
 </p>
 
 {/* Quote */}
 <blockquote className="border-l-4 pl-4 italic text-gray-500 text-base leading-relaxed mb-6" style={{ borderColor: "#ea4f4e" }}>
-"Cada mascota merece sentirse segura. Eso es lo que guía cada consulta."
+"Me gusta que los dueños salgan de aquí sintiéndose escuchados, no solo informados."
 </blockquote>
 
 <p className="text-gray-500 text-sm leading-relaxed">
