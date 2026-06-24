@@ -225,7 +225,7 @@ Si tu mascota no tiene un historial actualizado o llevas tiempo sin pasar por la
 <section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
 <div className="max-w-5xl mx-auto">
 
-<div className="mb-6 text-right">
+<div className="mb-6">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
 Qué incluye
 </p>
@@ -234,31 +234,31 @@ Servicios preventivos
 </h2>
 </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div className="flex flex-col gap-4">
 {servicios.map((s) => (
 <div
 key={s.nombre}
-className="group rounded-2xl p-7 flex flex-col gap-4 transition-all duration-200 hover:shadow-md cursor-default"
+className="group rounded-2xl p-6 flex gap-5 items-start transition-all duration-200 hover:shadow-md cursor-default"
 style={{
 backgroundColor: "#ffffff",
 border: "1px solid #e5e7eb",
-borderTop: "3px solid #104766",
+borderLeft: "4px solid #104766",
 }}
 >
-<div className="flex items-center gap-3">
 <span
-className="flex-shrink-0 rounded-xl p-2"
+className="flex-shrink-0 rounded-xl p-2 mt-0.5"
 style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 >
 {s.icono}
 </span>
-<h3 className="text-base font-bold leading-snug" style={{ color: "#104766" }}>
+<div className="flex-1">
+<h3 className="text-base font-bold mb-2 leading-snug" style={{ color: "#104766" }}>
 {s.nombre}
 </h3>
-</div>
 <p className="text-gray-500 text-sm leading-relaxed">
 {s.desc}
 </p>
+</div>
 </div>
 ))}
 </div>
@@ -285,8 +285,8 @@ style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 <div key={p.titulo}
 className="rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
 style={{ border: "1px solid #e5e7eb" }}>
-<div className="relative w-full h-72 overflow-hidden">
-<Image src={p.img} alt={p.titulo} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+<div className="relative w-full h-80 overflow-hidden" style={{ backgroundColor: "#f8fafc" }}>
+<Image src={p.img} alt={p.titulo} fill className="object-contain" />
 <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${p.acento}cc 0%, transparent 60%)` }} />
 <div className="absolute bottom-4 left-5">
 <span className="text-xs font-bold uppercase tracking-widest text-white opacity-90">{p.edad}</span>
@@ -317,8 +317,8 @@ style={{ border: "1px solid #e5e7eb" }}>
 <div key={p.titulo}
 className="rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
 style={{ border: "1px solid #e5e7eb" }}>
-<div className="relative w-full h-72 overflow-hidden">
-<Image src={p.img} alt={p.titulo} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+<div className="relative w-full h-80 overflow-hidden" style={{ backgroundColor: "#f8fafc" }}>
+<Image src={p.img} alt={p.titulo} fill className="object-contain" />
 <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${p.acento}cc 0%, transparent 60%)` }} />
 <div className="absolute bottom-4 left-5">
 <span className="text-xs font-bold uppercase tracking-widest text-white opacity-90">{p.edad}</span>
@@ -391,7 +391,7 @@ aria-hidden="true"
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 ¿Tu mascota está al día?
 </p>
-<h2 className="text-white text-2xl md:text-3xl font-bold mb-4 leading-snug">
+<h2 className="text-2xl md:text-3xl font-bold mb-4 leading-snug" style={{ color: "white" }}>
 Consulta sin compromiso
 </h2>
 <p className="text-blue-200 mb-8 max-w-xl mx-auto text-base leading-relaxed">
