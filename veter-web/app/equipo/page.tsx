@@ -210,7 +210,19 @@ Francesca es quien da voz a Veter en redes sociales. Comparte consejos, noticias
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Nuestra forma de trabajar</p>
 <h2 className="text-4xl font-extrabold mb-14 leading-tight" style={{ color: "#104766" }}>Lo que nos define</h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+<div className="flex flex-col md:flex-row gap-12 items-center">
+
+<div className="hidden md:flex flex-shrink-0 w-64 items-center justify-center">
+<Image
+src="/equipo/ilustracion-medica.png"
+alt="Ilustración veterinaria"
+width={260}
+height={260}
+className="w-full h-auto"
+/>
+</div>
+
+<div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-7">
 {valores.map(v => (
 <div
 key={v.titulo}
@@ -232,6 +244,7 @@ boxShadow: "0 2px 12px 0 rgba(16,71,102,0.06)",
 ))}
 </div>
 
+</div>
 </div>
 </div>
 
