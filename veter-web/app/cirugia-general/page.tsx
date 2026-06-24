@@ -167,9 +167,9 @@ Procedimientos habituales
 <Image
 src="/images/ilustracion-cirugia.png"
 alt=""
-width={120}
-height={120}
-className="w-28 h-auto"
+width={200}
+height={200}
+className="w-48 h-auto"
 aria-hidden="true"
 />
 </div>
