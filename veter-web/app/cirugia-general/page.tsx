@@ -154,8 +154,7 @@ style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 <section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
 <div className="max-w-5xl mx-auto">
 
-<div className="flex items-center justify-between mb-6">
-<div>
+<div className="mb-6">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
 Qué realizamos
 </p>
@@ -163,31 +162,32 @@ Qué realizamos
 Procedimientos habituales
 </h2>
 </div>
-<div className="hidden md:block flex-shrink-0">
-<Image
-src="/images/ilustracion-cirugia.png"
-alt=""
-width={200}
-height={200}
-className="w-48 h-auto"
-aria-hidden="true"
-/>
-</div>
-</div>
 
 <div className="flex flex-col md:flex-row gap-10 items-start">
 
-<div className="flex-shrink-0 w-full md:w-[300px] relative self-center">
+<div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-6">
+<div className="relative w-full">
 <div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
 style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
 <Image
 src="/images/cirugia-veterinaria.png"
 alt="Veterinaria preparando quirófano en Veter"
-width={300}
-height={300}
+width={400}
+height={400}
 className="w-full h-auto relative z-10"
 style={{ borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }}
 />
+</div>
+<div className="hidden md:block">
+<Image
+src="/images/ilustracion-cirugia.png"
+alt=""
+width={160}
+height={160}
+className="w-40 h-auto"
+aria-hidden="true"
+/>
+</div>
 </div>
 
 <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5">
