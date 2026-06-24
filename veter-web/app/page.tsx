@@ -1,6 +1,7 @@
 import Image from "next/image"
 import HeroSlider from "./components/HeroSlider"
 import ReviewsCarousel from "./components/ReviewsCarousel"
+import ContadoresAnimados from "./components/ContadoresAnimados"
 
 export const dynamic = "force-dynamic"
 
@@ -224,22 +225,7 @@ style={{ backgroundColor: "#104766" }}>
 </div>
 </section>
 
-{/* contadores */}
-<section style={{ backgroundColor: "#104766" }} className="py-16 px-4 text-white">
-<div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-{[
-{ num: "1.200+", label: "Intervenciones" },
-{ num: "3.500+", label: "Clientes" },
-{ num: "80+", label: "Adopciones" },
-{ num: "5.000+", label: "Tratamientos" },
-].map(s => (
-<div key={s.label}>
-<p className="text-4xl font-bold mb-1">{s.num}</p>
-<p className="text-blue-200 text-sm">{s.label}</p>
-</div>
-))}
-</div>
-</section>
+<ContadoresAnimados />
 
 
 {/* donde estamos */}
