@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
 title: "Servicios Veterinarios | Veter Centro Veterinario Rincón de la Victoria",
@@ -49,7 +50,7 @@ icono: (
 {
 num: "04",
 nombre: "Cirugía General",
-desc: "Intervenimos con los protocolos de seguridad más exigentes. Desde esterilizaciones hasta cirugías abdominales, el bienestar de tu mascota es nuestra prioridad antes, durante y después.",
+desc: "Cuando tu mascota necesita una intervención, queremos que estés tranquilo. Operamos con protocolos de seguridad rigurosos y un seguimiento personalizado antes, durante y después de cada cirugía.",
 icono: (
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
 <path d="M14.5 4l5.5 5.5-9.5 9.5-3-3 9.5-9.5"/>
@@ -152,16 +153,35 @@ return (
 <div>
 
 {/* Hero */}
-<section style={{ backgroundColor: "#104766" }} className="text-white py-20 px-4 text-center">
+<section style={{ backgroundColor: "#104766" }} className="text-white py-16 px-4">
+<div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+
+{/* Columna izquierda: texto */}
+<div className="flex-1 text-center md:text-left">
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 Lo que ofrecemos
 </p>
 <h1 className="text-white text-4xl md:text-5xl font-bold mb-5 leading-tight">
 Servicios Veterinarios
 </h1>
-<p className="text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
+<p className="text-blue-200 text-lg leading-relaxed">
 Atención especializada para perros y gatos en Rincón de la Victoria. Todo lo que tu mascota necesita, en un solo lugar.
 </p>
+</div>
+
+{/* Columna derecha: imagen */}
+<div className="flex-shrink-0 w-full md:w-[340px] bg-white rounded-2xl p-4 shadow-sm">
+<Image
+src="/images/servicios-hero.png"
+alt="Veterinaria con mascota — Veter Centro Veterinario"
+width={340}
+height={340}
+className="w-full h-auto object-contain rounded-xl"
+priority
+/>
+</div>
+
+</div>
 </section>
 
 {/* Lista de servicios */}
