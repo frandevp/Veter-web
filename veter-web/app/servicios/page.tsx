@@ -172,16 +172,15 @@ Atención especializada para perros y gatos en Rincón de la Victoria. Todo lo q
 <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
 {/* Imagen blob */}
-<div className="w-full md:w-[420px] flex-shrink-0 relative">
-<div className="absolute -bottom-4 -left-4 w-full h-full opacity-20 pointer-events-none"
-style={{ backgroundColor: "#ea4f4e", borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
+<div className="w-full md:w-[500px] flex-shrink-0 relative">
+<div className="absolute -bottom-6 -left-6 w-[110%] h-[110%] pointer-events-none"
+style={{ backgroundColor: "white", borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%", boxShadow: "0 4px 24px 0 rgba(16,71,102,0.08)" }} />
 <Image
 src="/images/servicios-hero.png"
 alt="Veterinaria con mascota — Veter Centro Veterinario"
-width={420}
-height={420}
+width={500}
+height={500}
 className="w-full h-auto object-contain relative z-10"
-style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 priority
 />
 </div>
