@@ -32,7 +32,7 @@ acento: "#ea4f4e",
 {
 num: "04",
 titulo: "Disponibilidad real",
-desc: "Citas para el mismo día o el día siguiente. Abiertos hasta las 20:00 h de lunes a viernes para adaptarnos a tu agenda.",
+desc: "Citas para el mismo día o el día siguiente. Nos adaptamos a tu agenda.",
 acento: "#104766",
 },
 ]
