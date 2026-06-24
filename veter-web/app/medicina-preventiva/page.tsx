@@ -1,140 +1,288 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
-title: "Medicina Preventiva Veterinaria | Veter Rincón de la Victoria",
-description: "Vacunación, desparasitación y planes de salud preventivos para tu mascota en Rincón de la Victoria, Málaga. Calendarios de vacunación para perros y gatos.",
+title: "Medicina Preventiva Veterinaria | Veter Centro Veterinario Rincón de la Victoria",
+description: "Vacunas, desparasitaciones y planes de salud personalizados para tu mascota en Rincón de la Victoria, Málaga. Prevenir es la mejor forma de cuidar.",
 openGraph: {
-title: "Medicina Preventiva | Veter",
-description: "Vacunas, desparasitaciones y planes de salud para tu mascota en Rincón de la Victoria, Málaga.",
+title: "Medicina Preventiva | Veter Centro Veterinario",
+description: "Protocolos de vacunación, desparasitación interna y externa, y revisiones periódicas adaptadas a cada mascota en Veter, Rincón de la Victoria.",
 },
 }
 
-const vacunasCachorros = [
-{ nombre: "DP Plus", desc: "Distemper y Parvovirus. Primera vacuna esencial del cachorro." },
-{ nombre: "DHPPI", desc: "Protección combinada frente a Distemper, Hepatitis, Parvovirus y Parainfluenza." },
-{ nombre: "Leptospira", desc: "Prevención de leptospirosis, enfermedad transmisible también a personas." },
-]
-
-const vacunasAdultos = [
-{ nombre: "DHPPI (refuerzo)", desc: "Refuerzo anual de la vacuna combinada para mantener la inmunidad." },
-{ nombre: "Leptospira (refuerzo)", desc: "Refuerzo anual imprescindible, especialmente en zonas con agua estancada." },
-{ nombre: "Tos de las perreras", desc: "Recomendada si el perro frecuenta residencias, parques o zonas con otros perros." },
-{ nombre: "Leishmaniosis", desc: "Vacunas disponibles: Letifemd y Neoleish. Especialmente importante en zonas mediterráneas." },
-]
-
-const desparasitaciones = [
+const servicios = [
 {
-tipo: "Desparasitación interna",
-productos: ["Advocate", "Nexgard Spectra"],
-desc: "Elimina parásitos intestinales como áscaris y tenias, y protege frente a parásitos internos que pueden afectar la salud del animal y de la familia.",
+nombre: "Vacunación en cachorros",
+desc: "Diseñamos el calendario vacunal desde las primeras semanas de vida. Cubrimos moquillo, parvovirus, hepatitis y leptospirosis, adaptando cada pauta a la edad del cachorro y a su ritmo de desarrollo.",
+icono: (
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+</svg>
+),
 },
 {
-tipo: "Desparasitación externa",
-productos: ["Frontline", "Bravecto", "Nexgard", "Evicto"],
-desc: "Protege frente a pulgas, garrapatas y otros ectoparásitos. Disponible en pipetas, comprimidos y collares según las necesidades de cada mascota.",
+nombre: "Vacunación en adultos",
+desc: "Los refuerzos anuales de DHPPI y leptospirosis mantienen la inmunidad activa. También valoramos vacunas adicionales como la de la tos de las perreras si el perro tiene contacto frecuente con otros animales.",
+icono: (
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+<polyline points="22 4 12 14.01 9 11.01"/>
+</svg>
+),
+},
+{
+nombre: "Vacuna contra la leishmaniosis",
+desc: "Trabajamos con Letifemd y Neoleish, dos opciones eficaces frente a una enfermedad endémica en nuestra zona. Te explicamos cuál encaja mejor con cada perro y cómo integrarla en el protocolo preventivo.",
+icono: (
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+<circle cx="12" cy="12" r="10"/>
+<line x1="12" y1="8" x2="12" y2="12"/>
+<line x1="12" y1="16" x2="12.01" y2="16"/>
+</svg>
+),
+},
+{
+nombre: "Desparasitación interna",
+desc: "Lombrices, tenias y otros parásitos intestinales se tratan con productos como Advocate o Nexgard Spectra. La frecuencia depende del estilo de vida del animal y del riesgo al que está expuesto.",
+icono: (
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+<path d="M8 12s1.5-2 4-2 4 2 4 2"/>
+<line x1="9" y1="9" x2="9.01" y2="9"/>
+<line x1="15" y1="9" x2="15.01" y2="9"/>
+</svg>
+),
+},
+{
+nombre: "Desparasitación externa",
+desc: "Pulgas, garrapatas y ácaros pueden causar problemas serios si no se controlan. Usamos Frontline, Bravecto, Nexgard y Evicto, eligiendo el formato — pipeta, comprimido o collar — que mejor se adapte a cada mascota.",
+icono: (
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+<polyline points="9 22 9 12 15 12 15 22"/>
+</svg>
+),
+},
+{
+nombre: "Plan de salud personalizado",
+desc: "Cada mascota tiene su propio ritmo. Diseñamos un calendario preventivo anual que combina vacunas, desparasitaciones y revisiones, pensado para su edad, raza y forma de vida. Sin protocolos genéricos.",
+icono: (
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+<line x1="16" y1="2" x2="16" y2="6"/>
+<line x1="8" y1="2" x2="8" y2="6"/>
+<line x1="3" y1="10" x2="21" y2="10"/>
+</svg>
+),
+},
+]
+
+const etapas = [
+{
+num: "01",
+titulo: "La primera visita",
+desc: "Cuando traes a un cachorro o a un animal adulto sin historial previo, lo primero es hacer una revisión general completa. Valoramos su estado físico, revisamos si tiene carnet sanitario y definimos juntos por dónde empezar. Es la base sobre la que se construye todo lo demás.",
+acento: "#ea4f4e",
+},
+{
+num: "02",
+titulo: "El seguimiento periódico",
+desc: "La medicina preventiva no es una visita puntual, es un hábito. Cada año recordamos los refuerzos que tocan, revisamos si los tratamientos antiparasitarios siguen siendo los adecuados y aprovechamos para detectar cualquier cambio que merezca atención antes de que avance.",
+acento: "#104766",
+},
+{
+num: "03",
+titulo: "Adaptación con la edad",
+desc: "Las necesidades cambian. Un perro mayor necesita controles más frecuentes y un enfoque diferente al de un cachorro. Ajustamos el plan preventivo a cada etapa de la vida para que la protección sea real y no solo un trámite.",
+acento: "#ea4f4e",
 },
 ]
 
 export default function MedicinaPreventiva() {
 return (
 <div>
-<section style={{ backgroundColor: "#104766" }} className="text-white py-20 px-4 text-center">
-<h1 className="text-white text-4xl font-bold mb-4">Garantiza la salud de tu Mascota</h1>
-<p className="text-blue-200 max-w-xl mx-auto mb-8">Bienestar y atención preventiva</p>
-<a href="https://wa.me/message/QSHQLWTJJJYDI1" target="_blank" rel="noopener noreferrer"
-className="inline-block bg-[#ea4f4e] text-white font-semibold px-8 py-3 rounded-full hover:opacity-90 transition uppercase tracking-wide text-sm">
-Reserva una Cita
-</a>
-</section>
 
-<section className="max-w-4xl mx-auto px-4 py-20">
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Prevención</p>
-<h2 className="text-3xl font-bold mb-6" style={{ color: "#104766" }}>Nuestro compromiso con la salud preventiva</h2>
-<p className="text-gray-600 leading-relaxed mb-4">
-La medicina preventiva es la mejor herramienta para mantener a tu mascota sana y detectar problemas antes de que se agraven. En Veter ofrecemos vacunaciones adaptadas a cada animal, desparasitaciones periódicas y planes de salud personalizados.
+{/* Hero — fondo azul con pill label coral */}
+<section style={{ backgroundColor: "#104766" }} className="text-white py-20 px-4">
+<div className="max-w-3xl mx-auto text-center">
+<p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
+Servicios
 </p>
-<p className="text-gray-600 leading-relaxed">
-Un animal correctamente vacunado y desparasitado no solo está protegido, sino que también reduce el riesgo de transmisión de enfermedades a otros animales y a las personas de su entorno.
-</p>
-</section>
-
-<section className="bg-gray-50 py-16 px-4">
-<div className="max-w-4xl mx-auto">
-<h2 className="text-2xl font-bold mb-5" style={{ color: "#104766" }}>¿Qué es una vacuna y cómo funciona?</h2>
-<p className="text-gray-600 leading-relaxed mb-4">
-Una vacuna es una preparación que contiene agentes similares al microorganismo causante de una enfermedad, generalmente versiones debilitadas o inactivadas del patógeno. Al administrarla, el sistema inmunológico reconoce el agente como una amenaza, lo destruye y conserva memoria de él.
-</p>
-<p className="text-gray-600 leading-relaxed">
-Así, si el animal entra en contacto con la enfermedad real en el futuro, su sistema inmune puede responder de forma rápida y eficaz. Una población correctamente vacunada contribuye además a frenar la propagación de enfermedades, protegiendo también a los animales que no pueden vacunarse por razones médicas.
+<h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: "white" }}>
+Medicina Preventiva
+</h1>
+<p className="text-blue-200 text-lg leading-relaxed max-w-xl mx-auto">
+Prevenir siempre es mejor que curar. Un buen protocolo preventivo es la forma más eficaz de dar a tu mascota una vida larga y saludable.
 </p>
 </div>
 </section>
 
-<section className="max-w-5xl mx-auto px-4 py-20">
-<h2 className="text-2xl font-bold mb-2" style={{ color: "#104766" }}>Vacunas para cachorros</h2>
-<p className="text-gray-500 text-sm mb-8">Protocolo inicial para proteger a tu cachorro desde las primeras semanas</p>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-{vacunasCachorros.map(v => (
-<div key={v.nombre} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
-<div className="w-2 h-6 rounded-full mb-3" style={{ backgroundColor: "#ea4f4e" }} />
-<h3 className="font-bold text-base mb-2" style={{ color: "#104766" }}>{v.nombre}</h3>
-<p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
-</div>
-))}
+{/* Introducción — narrativa, sin enumeraciones */}
+<section className="bg-white py-16 px-4">
+<div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+
+<div className="flex-1">
+<p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
+Nuestro enfoque
+</p>
+<h2 className="text-2xl md:text-3xl font-bold mb-6 leading-snug" style={{ color: "#104766" }}>
+Cuidar antes de que haya un problema
+</h2>
+<p className="text-gray-500 text-base leading-relaxed mb-4 text-justify">
+La medicina preventiva parte de una idea sencilla: es mucho más fácil evitar una enfermedad que tratarla una vez que se ha instalado. Vacunas, desparasitaciones y revisiones periódicas no son un gasto, son una inversión directa en la calidad de vida de tu mascota.
+</p>
+<p className="text-gray-500 text-base leading-relaxed mb-4 text-justify">
+En Veter no aplicamos protocolos genéricos. Diseñamos el plan preventivo de cada animal teniendo en cuenta su edad, su raza, su estilo de vida y el entorno en el que vive. Un perro que sale al campo todos los días no tiene las mismas necesidades que uno que vive en un piso en el centro del pueblo.
+</p>
+<p className="text-gray-500 text-base leading-relaxed text-justify">
+Si tu mascota no tiene un historial actualizado o llevas tiempo sin pasar por la clínica, la consulta preventiva es el mejor punto de partida. Sin presiones, sin protocolo rígido: simplemente revisamos en qué punto está y qué necesita a partir de ahora.
+</p>
 </div>
 
-<h2 className="text-2xl font-bold mb-2" style={{ color: "#104766" }}>Vacunas para perros adultos</h2>
-<p className="text-gray-500 text-sm mb-8">Refuerzos anuales y protección adicional según el estilo de vida del animal</p>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-{vacunasAdultos.map(v => (
-<div key={v.nombre} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
-<div className="w-2 h-6 rounded-full mb-3" style={{ backgroundColor: "#104766" }} />
-<h3 className="font-bold text-base mb-2" style={{ color: "#104766" }}>{v.nombre}</h3>
-<p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+<div className="flex-shrink-0 w-full md:w-[520px] relative">
+<div className="absolute -bottom-4 -right-4 w-full h-full pointer-events-none"
+style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
+<Image
+src="/images/perro1.jpeg"
+alt="Mascota feliz y saludable en Veter Centro Veterinario"
+width={520}
+height={520}
+className="w-full h-auto relative z-10"
+style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
+/>
 </div>
-))}
+
 </div>
 </section>
 
-<section className="bg-gray-50 py-20 px-4">
+{/* Servicios preventivos — cards con icono, hover effect */}
+<section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
 <div className="max-w-5xl mx-auto">
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Parásitos</p>
-<h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Desparasitaciones</h2>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-{desparasitaciones.map(d => (
-<div key={d.tipo} className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-<h3 className="font-bold text-lg mb-3" style={{ color: "#104766" }}>{d.tipo}</h3>
-<p className="text-gray-500 text-sm leading-relaxed mb-4">{d.desc}</p>
-<div className="flex flex-wrap gap-2">
-{d.productos.map(p => (
-<span key={p} className="text-xs font-semibold px-3 py-1 rounded-full"
-style={{ backgroundColor: "#eef4f8", color: "#104766" }}>
-{p}
+
+<div className="mb-6 text-right">
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
+Qué incluye
+</p>
+<h2 className="text-2xl md:text-3xl font-bold leading-snug" style={{ color: "#104766" }}>
+Servicios preventivos
+</h2>
+</div>
+
+<div className="flex flex-col md:flex-row gap-10 items-center">
+
+<div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-6">
+<div className="relative w-full">
+<div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
+style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
+<Image
+src="/images/gato1.jpeg"
+alt="Gato en revisión preventiva en Veter"
+width={400}
+height={400}
+className="w-full h-auto relative z-10"
+style={{ borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }}
+/>
+</div>
+</div>
+
+<div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5">
+{servicios.map((s) => (
+<div
+key={s.nombre}
+className="group rounded-2xl p-7 flex flex-col gap-4 transition-all duration-200 hover:shadow-md cursor-default"
+style={{
+backgroundColor: "#ffffff",
+border: "1px solid #e5e7eb",
+borderTop: "3px solid #104766",
+}}
+>
+<div className="flex items-center gap-3">
+<span
+className="flex-shrink-0 rounded-xl p-2"
+style={{ backgroundColor: "#eff6ff", color: "#104766" }}
+>
+{s.icono}
 </span>
+<h3 className="text-base font-bold leading-snug" style={{ color: "#104766" }}>
+{s.nombre}
+</h3>
+</div>
+<p className="text-gray-500 text-sm leading-relaxed">
+{s.desc}
+</p>
+</div>
 ))}
 </div>
+
 </div>
-))}
-</div>
+
 </div>
 </section>
 
-<section className="py-16 px-4 text-center">
-<h2 className="text-2xl font-bold mb-3" style={{ color: "#104766" }}>¿Necesitas poner las vacunas de tu mascota?</h2>
-<p className="text-gray-500 mb-6">Pídenos cita y preparamos el calendario adaptado a tu animal.</p>
-<div className="flex gap-4 justify-center flex-wrap">
-<a href="https://wa.me/message/QSHQLWTJJJYDI1" target="_blank" rel="noopener noreferrer"
-className="text-white font-semibold px-7 py-3 rounded-full hover:opacity-90 transition"
-style={{ backgroundColor: "#ea4f4e" }}>
-Hacer una Cita
-</a>
-<a href="tel:+34640995846"
-className="font-semibold px-7 py-3 rounded-full border-2 hover:bg-gray-100 transition"
-style={{ color: "#104766", borderColor: "#104766" }}>
-+34 640 995 846
-</a>
+{/* Cómo funciona — 3 etapas del cuidado preventivo */}
+<section className="bg-white py-16 px-4">
+<div className="max-w-4xl mx-auto">
+
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
+Cómo funciona
+</p>
+<h2 className="text-2xl md:text-3xl font-bold mb-12 leading-snug" style={{ color: "#104766" }}>
+La prevención como hábito
+</h2>
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+{etapas.map((e) => (
+<div
+key={e.num}
+className="relative rounded-2xl p-8 flex flex-col"
+style={{
+backgroundColor: "#f8fafc",
+border: "1px solid #e5e7eb",
+borderTop: `4px solid ${e.acento}`,
+boxShadow: "0 2px 12px 0 rgba(16,71,102,0.06)",
+}}
+>
+<span
+className="text-5xl font-extrabold leading-none mb-5 select-none"
+style={{ color: e.acento, opacity: 0.18 }}
+aria-hidden="true"
+>
+{e.num}
+</span>
+<h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: "#104766" }}>
+{e.titulo}
+</h3>
+<p className="text-gray-500 text-sm leading-relaxed">
+{e.desc}
+</p>
+</div>
+))}
+</div>
+
 </div>
 </section>
+
+{/* CTA final */}
+<section style={{ backgroundColor: "#104766" }} className="py-16 px-4 text-center text-white">
+<p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
+¿Tu mascota está al día?
+</p>
+<h2 className="text-white text-2xl md:text-3xl font-bold mb-4 leading-snug">
+Consulta sin compromiso
+</h2>
+<p className="text-blue-200 mb-8 max-w-xl mx-auto text-base leading-relaxed">
+Si no recuerdas cuándo fue la última vacuna o desparasitación, o si acabas de adoptar y quieres empezar bien, escríbenos por WhatsApp. Solemos tener citas disponibles para el mismo día o el siguiente.
+</p>
+<a
+href="https://wa.me/message/QSHQLWTJJJYDI1"
+target="_blank"
+rel="noopener noreferrer"
+className="inline-block bg-[#ea4f4e] text-white font-semibold px-8 py-4 rounded-full hover:opacity-90 transition text-base"
+>
+Pedir cita por WhatsApp
+</a>
+</section>
+
 </div>
 )
 }
