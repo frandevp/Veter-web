@@ -114,7 +114,9 @@ Intervenimos con precisión y con calma. Porque una cirugía bien planificada es
 
 {/* Introducción — narrativa, sin enumeraciones */}
 <section className="bg-white py-16 px-4">
-<div className="max-w-3xl mx-auto">
+<div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+
+<div className="flex-1">
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 Nuestro enfoque
 </p>
@@ -130,6 +132,21 @@ En Veter llevamos a cabo tanto intervenciones de rutina — como esterilizacione
 <p className="text-gray-500 text-base leading-relaxed">
 La Dra. Celeste Trevisi, con formación en medicina interna y cirugía general, lleva personalmente los casos quirúrgicos del centro. Si tienes dudas sobre si tu mascota necesita una intervención, la consulta previa es el primer paso y no compromete a nada.
 </p>
+</div>
+
+<div className="flex-shrink-0 w-full md:w-[380px] relative">
+<div className="absolute -bottom-4 -right-4 w-full h-full pointer-events-none"
+style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
+<Image
+src="/images/cirugia-perro.jpg"
+alt="Perro feliz en Veter Centro Veterinario"
+width={380}
+height={380}
+className="w-full h-auto relative z-10"
+style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
+/>
+</div>
+
 </div>
 </section>
 
