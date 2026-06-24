@@ -59,7 +59,7 @@ Profesionales comprometidos con la salud animal. Cercanía, empatía y excelenci
 "En Veter Centro Veterinario, nuestra misión es brindar una atención y experiencia excepcional para las mascotas y sus padres y al mismo tiempo crear el mejor ambiente posible para los miembros de nuestro equipo. Perseguimos nuestra misión de todo corazón, innovando constantemente en un entorno feliz y libre de estrés para perros y gatos. Nos dedicamos a mimar a los dueños de mascotas, asegurándonos de que cada visita sea una experiencia positiva y tranquilizadora. Además, estamos comprometidos a crear un lugar increíble para que los veterinarios busquen su realización profesional y personal, fomentando un ambiente de crecimiento y satisfacción laboral."
 </blockquote>
 </div>
-<div className="flex-1 relative h-72 md:h-96 w-full rounded-2xl overflow-hidden shadow-lg">
+<div className="flex-1 relative h-96 md:h-[520px] w-full rounded-2xl overflow-hidden shadow-lg">
 <Image
 src="/equipo/quienes-somos.jpg"
 alt="Dra. Celeste con un perro en Veter Centro Veterinario"
