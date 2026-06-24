@@ -270,13 +270,13 @@ aria-hidden="true"
 {/* CTA final — igual que /servicios y /equipo */}
 <section style={{ backgroundColor: "#104766" }} className="py-16 px-4 text-center text-white">
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
-¿Necesitas una valoración?
+Antes de decidir nada
 </p>
-<h2 className="text-white text-2xl md:text-3xl font-bold mb-4 leading-snug">
-Consulta sin compromiso
+<h2 className="text-2xl md:text-3xl font-bold mb-4 leading-snug" style={{ color: "white" }}>
+Hablamos primero
 </h2>
 <p className="text-blue-200 mb-8 max-w-xl mx-auto text-base leading-relaxed">
-Si crees que tu mascota puede necesitar una intervención, o simplemente quieres que la valoremos, escríbenos por WhatsApp. Solemos tener citas disponibles para el mismo día o el siguiente.
+Si tienes dudas sobre si tu mascota necesita operarse, lo primero es una valoración. Sin comprometerte a nada: revisamos el caso, te explicamos lo que vemos y decidimos juntos el siguiente paso.
 </p>
 <a
 href="https://wa.me/message/QSHQLWTJJJYDI1"
@@ -284,7 +284,7 @@ target="_blank"
 rel="noopener noreferrer"
 className="inline-block bg-[#ea4f4e] text-white font-semibold px-8 py-4 rounded-full hover:opacity-90 transition text-base"
 >
-Pedir cita por WhatsApp
+Escríbenos por WhatsApp
 </a>
 </section>
 
