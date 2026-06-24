@@ -154,7 +154,7 @@ style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 <section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
 <div className="max-w-5xl mx-auto">
 
-<div className="mb-6">
+<div className="mb-6 text-right">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
 Qué realizamos
 </p>
