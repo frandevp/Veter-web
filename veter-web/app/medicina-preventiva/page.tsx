@@ -158,9 +158,9 @@ style={{ borderRadius: "55% 45% 38% 62% / 48% 58% 42% 52%", objectFit: "cover" }
 <Image
 src="/images/ilustracion-veter.png"
 alt="Your pet is always better with Veter"
-width={420}
-height={420}
-className="w-full h-auto"
+width={220}
+height={220}
+className="w-48 h-auto mx-auto"
 aria-hidden="true"
 />
 </div>
