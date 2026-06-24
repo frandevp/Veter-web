@@ -134,14 +134,14 @@ La Dra. Celeste Trevisi, con formación en medicina interna y cirugía general, 
 </p>
 </div>
 
-<div className="flex-shrink-0 w-full md:w-[380px] relative">
+<div className="flex-shrink-0 w-full md:w-[520px] relative">
 <div className="absolute -bottom-4 -right-4 w-full h-full pointer-events-none"
 style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
 <Image
 src="/images/cirugia-perro.jpg"
 alt="Perro feliz en Veter Centro Veterinario"
-width={380}
-height={380}
+width={520}
+height={520}
 className="w-full h-auto relative z-10"
 style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 />
