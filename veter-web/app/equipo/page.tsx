@@ -16,7 +16,7 @@ nombre: "Dra. Celeste Trevisi",
 rol: "Directora Veterinaria",
 especialidad: "Medicina Interna · Cirugía General",
 desc: "Celeste dirige el centro con una visión clara: que cada visita sea una experiencia positiva para la mascota y para su familia. Su formación en medicina interna y cirugía general le permite abordar casos complejos con precisión y cercanía.",
-foto: "/equipo/directora.png",
+foto: "/equipo/directora.jpg",
 },
 {
 nombre: "Francisca Maria Hevilla",
