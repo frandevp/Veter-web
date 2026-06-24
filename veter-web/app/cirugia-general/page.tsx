@@ -176,7 +176,7 @@ aria-hidden="true"
 />
 <div className="relative w-full">
 <div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
-style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
+style={{ backgroundColor: "#104766", opacity: 0.30, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
 <Image
 src="/images/cirugia-veterinaria.png"
 alt="Veterinaria preparando quirófano en Veter"
