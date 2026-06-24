@@ -239,7 +239,11 @@ style={{ backgroundColor: "#104766" }}>
 <div className="space-y-3 text-sm text-gray-600">
 <p><strong style={{ color: "#104766" }}>Dirección</strong><br />Plaza del señorío, local 3, frente a la Notaría<br />Rincón de la Victoria, 29730, Málaga</p>
 <p><strong style={{ color: "#104766" }}>Teléfonos</strong><br />+34 640 995 846 · +34 951 25 73 88</p>
-<p><strong style={{ color: "#104766" }}>Horario</strong><br />Lunes a Viernes: 09:00 – 20:00 h</p>
+<p><strong style={{ color: "#104766" }}>Horario</strong><br />
+Lunes: 10:00 – 18:00 h<br />
+Martes a viernes: 10:00 – 14:00 · 17:00 – 20:00 h<br />
+Sábado: 10:00 – 14:00 h<br />
+Domingo: Cerrado</p>
 </div>
 </div>
 <div>
