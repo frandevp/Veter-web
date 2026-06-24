@@ -137,14 +137,14 @@ Celeste dirige el centro con una visión clara: que cada visita sea una experien
 </div>
 
 {/* --- LAS OTRAS DOS: grid de 2 columnas --- */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
 
 {/* Administración */}
 <div
 className="rounded-2xl overflow-hidden shadow-sm flex flex-col group"
 style={{ backgroundColor: "#f8fafc", border: "1px solid #e5e7eb" }}
 >
-<div className="relative w-full h-64 overflow-hidden">
+<div className="relative w-full h-96 overflow-hidden">
 <Image
 src="/equipo/administracion.jpg"
 alt="Francisca Maria Hevilla"
@@ -174,7 +174,7 @@ Francisca es la primera persona que te recibe cuando llegas a Veter. Se encarga 
 className="rounded-2xl overflow-hidden shadow-sm flex flex-col group"
 style={{ backgroundColor: "#f8fafc", border: "1px solid #e5e7eb" }}
 >
-<div className="relative w-full h-64 overflow-hidden">
+<div className="relative w-full h-96 overflow-hidden">
 <Image
 src="/equipo/marketing.jpg"
 alt="Francesca Lombardo"
