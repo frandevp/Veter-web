@@ -78,9 +78,6 @@ function next() { setDesde(i => Math.min(max, i + 1)) }
 return (
 <section className="py-20 px-4" style={{ backgroundColor: "#faf8f6" }}>
 <div className="max-w-6xl mx-auto">
-<p className="text-center text-sm font-bold uppercase tracking-widest mb-2" style={{ color: "#ea4f4e" }}>
-¿Por qué los padres de mascotas aman a Veter?
-</p>
 <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#104766" }}>Testimonios</h2>
 
 <div className="flex gap-8 items-start">
