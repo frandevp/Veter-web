@@ -158,7 +158,7 @@ return (
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 Lo que ofrecemos
 </p>
-<h1 className="text-white text-4xl md:text-5xl font-bold mb-5 leading-tight">
+<h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: "white" }}>
 Servicios Veterinarios
 </h1>
 <p className="text-blue-200 text-lg leading-relaxed max-w-xl mx-auto">
@@ -171,14 +171,17 @@ Atención especializada para perros y gatos en Rincón de la Victoria. Todo lo q
 <section className="bg-white py-16 px-4">
 <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
-{/* Imagen */}
-<div className="w-full md:w-[400px] flex-shrink-0">
+{/* Imagen blob */}
+<div className="w-full md:w-[420px] flex-shrink-0 relative">
+<div className="absolute -bottom-4 -left-4 w-full h-full opacity-20 pointer-events-none"
+style={{ backgroundColor: "#ea4f4e", borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
 <Image
 src="/images/servicios-hero.png"
 alt="Veterinaria con mascota — Veter Centro Veterinario"
-width={400}
-height={400}
-className="w-full h-auto object-contain rounded-2xl shadow-md"
+width={420}
+height={420}
+className="w-full h-auto object-contain relative z-10"
+style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 priority
 />
 </div>
