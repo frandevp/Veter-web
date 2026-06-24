@@ -188,7 +188,7 @@ src="/images/clientes.jpg"
 alt="Clientes satisfechos de Veter Centro Veterinario"
 width={460}
 height={520}
-className="object-cover w-full h-full"
+className="object-cover w-full h-full relative z-10"
 style={{
 borderRadius: "72% 28% 38% 62% / 55% 67% 33% 45%",
 objectPosition: "center top",
