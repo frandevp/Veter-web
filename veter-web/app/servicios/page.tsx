@@ -152,33 +152,57 @@ export default function Servicios() {
 return (
 <div>
 
-{/* Hero */}
-<section style={{ backgroundColor: "#104766" }} className="text-white py-16 px-4">
-<div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
-
-{/* Columna izquierda: texto */}
-<div className="flex-1 text-center md:text-left">
+{/* Hero — solo texto, limpio */}
+<section style={{ backgroundColor: "#104766" }} className="text-white py-20 px-4">
+<div className="max-w-3xl mx-auto text-center">
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 Lo que ofrecemos
 </p>
 <h1 className="text-white text-4xl md:text-5xl font-bold mb-5 leading-tight">
 Servicios Veterinarios
 </h1>
-<p className="text-blue-200 text-lg leading-relaxed">
+<p className="text-blue-200 text-lg leading-relaxed max-w-xl mx-auto">
 Atención especializada para perros y gatos en Rincón de la Victoria. Todo lo que tu mascota necesita, en un solo lugar.
 </p>
 </div>
+</section>
 
-{/* Columna derecha: imagen */}
-<div className="flex-shrink-0 w-full md:w-[340px] bg-white rounded-2xl p-4 shadow-sm">
+{/* Sección introductoria — imagen + texto en fondo blanco */}
+<section className="bg-white py-16 px-4">
+<div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+
+{/* Imagen */}
+<div className="w-full md:w-[400px] flex-shrink-0">
 <Image
 src="/images/servicios-hero.png"
 alt="Veterinaria con mascota — Veter Centro Veterinario"
-width={340}
-height={340}
-className="w-full h-auto object-contain rounded-xl"
+width={400}
+height={400}
+className="w-full h-auto object-contain rounded-2xl shadow-md"
 priority
 />
+</div>
+
+{/* Texto */}
+<div className="flex-1 text-center md:text-left">
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
+Atención especializada
+</p>
+<h2 className="text-2xl md:text-3xl font-bold mb-4 leading-snug" style={{ color: "#104766" }}>
+Cuidamos a tu mascota como si fuera nuestra
+</h2>
+<p className="text-gray-500 text-base leading-relaxed mb-6">
+En Veter trabajamos con un equipo especializado para ofrecer diagnóstico, tratamiento y seguimiento en un mismo centro. Desde revisiones rutinarias hasta cirugías complejas, cada caso recibe la atención que merece.
+</p>
+<a
+href="https://wa.me/message/QSHQLWTJJJYDI1"
+target="_blank"
+rel="noopener noreferrer"
+className="inline-block text-white font-semibold px-7 py-3 rounded-full hover:opacity-90 transition text-sm"
+style={{ backgroundColor: "#ea4f4e" }}
+>
+Pedir cita
+</a>
 </div>
 
 </div>
