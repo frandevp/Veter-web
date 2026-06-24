@@ -12,24 +12,28 @@ description: "La Dra. Celeste Trevisi y el equipo de Veter Centro Veterinario en
 
 const valores = [
 {
-icono: "🩺",
+num: "01",
 titulo: "Diagnóstico preciso",
 desc: "Evaluamos cada caso con detalle, sin prisas. Combinamos exploración clínica con pruebas complementarias para llegar al diagnóstico correcto.",
+acento: "#ea4f4e",
 },
 {
-icono: "❤️",
+num: "02",
 titulo: "Trato cercano",
 desc: "Sabemos que tu mascota es parte de la familia. Explicamos cada paso, resolvemos tus dudas y te acompañamos durante todo el proceso.",
+acento: "#104766",
 },
 {
-icono: "📚",
+num: "03",
 titulo: "Formación continua",
 desc: "El equipo se forma de manera constante en las últimas técnicas y tratamientos para ofrecerte siempre lo mejor.",
+acento: "#ea4f4e",
 },
 {
-icono: "⚡",
+num: "04",
 titulo: "Disponibilidad real",
 desc: "Citas para el mismo día o el día siguiente. Abiertos hasta las 20:00 h de lunes a viernes para adaptarnos a tu agenda.",
+acento: "#104766",
 },
 ]
 
@@ -145,7 +149,7 @@ style={{ backgroundColor: "#f8fafc", border: "1px solid #e5e7eb" }}
 src="/equipo/administracion.jpg"
 alt="Francisca Maria Hevilla"
 fill
-className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
 sizes="(max-width: 768px) 100vw, 50vw"
 />
 </div>
@@ -175,7 +179,7 @@ style={{ backgroundColor: "#f8fafc", border: "1px solid #e5e7eb" }}
 src="/equipo/marketing.jpg"
 alt="Francesca Lombardo"
 fill
-className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
 sizes="(max-width: 768px) 100vw, 50vw"
 />
 </div>
@@ -199,20 +203,52 @@ Francesca es quien da voz a Veter en redes sociales. Comparte consejos, noticias
 </div>
 </div>
 
-{/* Valores */}
-<div className="py-16 px-4">
+{/* Valores — rediseño */}
+<div style={{ backgroundColor: "#f8fafc" }} className="py-20 px-4">
 <div className="max-w-5xl mx-auto">
+
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Nuestra forma de trabajar</p>
-<h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Lo que nos define</h2>
-<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<h2 className="text-4xl font-extrabold mb-14 leading-tight" style={{ color: "#104766" }}>Lo que nos define</h2>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-7">
 {valores.map(v => (
-<div key={v.titulo} className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition">
-<div className="text-3xl mb-4">{v.icono}</div>
-<h3 className="font-bold text-lg mb-2" style={{ color: "#104766" }}>{v.titulo}</h3>
-<p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+<div
+key={v.titulo}
+className="relative rounded-2xl overflow-hidden p-8 flex flex-col"
+style={{
+backgroundColor: "#ffffff",
+border: "1px solid #e5e7eb",
+borderTop: `4px solid ${v.acento}`,
+boxShadow: "0 2px 12px 0 rgba(16,71,102,0.06)",
+}}
+>
+{/* Número decorativo de fondo */}
+<span
+className="absolute top-4 right-5 text-8xl font-black leading-none select-none pointer-events-none"
+style={{ color: v.acento, opacity: 0.07 }}
+aria-hidden="true"
+>
+{v.num}
+</span>
+
+{/* Número visible pequeño */}
+<span
+className="text-xs font-black tracking-widest mb-5 block"
+style={{ color: v.acento }}
+>
+{v.num}
+</span>
+
+<h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: "#104766" }}>
+{v.titulo}
+</h3>
+<p className="text-gray-500 text-sm leading-relaxed">
+{v.desc}
+</p>
 </div>
 ))}
 </div>
+
 </div>
 </div>
 
