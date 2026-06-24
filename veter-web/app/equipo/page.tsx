@@ -222,23 +222,6 @@ borderTop: `4px solid ${v.acento}`,
 boxShadow: "0 2px 12px 0 rgba(16,71,102,0.06)",
 }}
 >
-{/* Número decorativo de fondo */}
-<span
-className="absolute top-4 right-5 text-8xl font-black leading-none select-none pointer-events-none"
-style={{ color: v.acento, opacity: 0.07 }}
-aria-hidden="true"
->
-{v.num}
-</span>
-
-{/* Número visible pequeño */}
-<span
-className="text-xs font-black tracking-widest mb-5 block"
-style={{ color: v.acento }}
->
-{v.num}
-</span>
-
 <h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: "#104766" }}>
 {v.titulo}
 </h3>
