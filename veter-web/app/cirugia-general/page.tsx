@@ -163,7 +163,7 @@ Procedimientos habituales
 </h2>
 </div>
 
-<div className="flex flex-col md:flex-row gap-10 items-start">
+<div className="flex flex-col md:flex-row gap-10 items-center">
 
 <div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-6">
 <div className="relative w-full">
