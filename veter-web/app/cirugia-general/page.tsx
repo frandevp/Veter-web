@@ -166,6 +166,14 @@ Procedimientos habituales
 <div className="flex flex-col md:flex-row gap-10 items-center">
 
 <div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-6">
+<Image
+src="/images/Diseno-sin-titulo-17.png"
+alt="Your pet is always better with Veter"
+width={400}
+height={400}
+className="w-full h-auto"
+aria-hidden="true"
+/>
 <div className="relative w-full">
 <div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
 style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
