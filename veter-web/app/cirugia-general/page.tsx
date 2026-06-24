@@ -152,7 +152,7 @@ style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 
 {/* Procedimientos — cards con icono, hover effect */}
 <section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
-<div className="max-w-4xl mx-auto">
+<div className="max-w-5xl mx-auto">
 
 <div className="flex items-center justify-between mb-6">
 <div>
@@ -175,7 +175,22 @@ aria-hidden="true"
 </div>
 </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div className="flex flex-col md:flex-row gap-10 items-start">
+
+<div className="flex-shrink-0 w-full md:w-[300px] relative self-center">
+<div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
+style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
+<Image
+src="/images/cirugia-veterinaria.png"
+alt="Veterinaria preparando quirófano en Veter"
+width={300}
+height={300}
+className="w-full h-auto relative z-10"
+style={{ borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }}
+/>
+</div>
+
+<div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5">
 {procedimientos.map((p) => (
 <div
 key={p.nombre}
@@ -202,6 +217,8 @@ style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 </p>
 </div>
 ))}
+</div>
+
 </div>
 
 </div>
