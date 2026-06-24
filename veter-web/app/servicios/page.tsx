@@ -275,7 +275,7 @@ aria-hidden="true"
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 ¿Necesitas atención?
 </p>
-<h2 className="text-white text-2xl md:text-3xl font-bold mb-4 leading-snug">
+<h2 className="text-2xl md:text-3xl font-bold mb-4 leading-snug" style={{ color: "white" }}>
 Pide cita hoy mismo
 </h2>
 <p className="text-blue-200 mb-8 max-w-xl mx-auto text-base leading-relaxed">
