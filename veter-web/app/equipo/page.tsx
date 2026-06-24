@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
 title: "Nuestro Equipo | Veter Centro Veterinario Rincón de la Victoria",
@@ -15,21 +16,21 @@ nombre: "Dra. Celeste Trevisi",
 rol: "Directora Veterinaria",
 especialidad: "Medicina Interna · Cirugía General",
 desc: "Celeste dirige el centro con una visión clara: que cada visita sea una experiencia positiva para la mascota y para su familia. Su formación en medicina interna y cirugía general le permite abordar casos complejos con precisión y cercanía.",
-inicial: "C",
+foto: "/equipo/directora.jpeg",
 },
 {
 nombre: "Francisca Maria Hevilla",
 rol: "Administración",
 especialidad: "Gestión y atención al cliente",
 desc: "Francisca es la primera persona que te recibe cuando llegas a Veter. Se encarga de la gestión de citas, la coordinación del centro y de que cada visita fluya sin problemas. Su trato amable hace que la experiencia empiece bien desde el primer momento.",
-inicial: "F",
+foto: "/equipo/administracion.png",
 },
 {
 nombre: "Francesca Lombardo",
 rol: "Redes Sociales",
 especialidad: "Comunicación y comunidad digital",
 desc: "Francesca es quien da voz a Veter en redes sociales. Se encarga de compartir consejos, noticias y el día a día de la clínica para mantener informada y conectada a la comunidad de dueños de mascotas.",
-inicial: "F",
+foto: "/equipo/marketing.png",
 },
 ]
 
@@ -81,15 +82,22 @@ Profesionales comprometidos con la salud animal. Cercanía, empatía y excelenci
 <h2 className="text-3xl font-bold mb-10" style={{ color: "#104766" }}>Las personas detrás de Veter</h2>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {equipo.map(m => (
-<div key={m.nombre} className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition flex flex-col">
-<div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-5 shrink-0"
-style={{ backgroundColor: "#104766" }}>
-{m.inicial}
+<div key={m.nombre} className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition flex flex-col">
+<div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+<Image
+src={m.foto}
+alt={m.nombre}
+width={400}
+height={300}
+className="w-full h-full object-cover object-top"
+/>
 </div>
+<div className="p-6 flex flex-col flex-1">
 <h3 className="font-bold text-lg mb-1" style={{ color: "#104766" }}>{m.nombre}</h3>
 <p className="text-sm font-semibold mb-1" style={{ color: "#ea4f4e" }}>{m.rol}</p>
 <p className="text-xs text-gray-400 mb-4">{m.especialidad}</p>
 <p className="text-gray-500 text-sm leading-relaxed">{m.desc}</p>
+</div>
 </div>
 ))}
 </div>
