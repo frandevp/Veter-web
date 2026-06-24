@@ -71,7 +71,7 @@ titulo: "Primeros Cuidados para Cachorros",
 especie: "Perros",
 edad: "0 – 12 meses",
 desc: "El primer año de un cachorro es el más determinante. Cubrimos todo lo que necesita desde las primeras semanas: vacunación primaria completa, desparasitaciones adaptadas a su desarrollo y microchip para que quede identificado desde el principio.",
-img: "/images/super-conveniente.jpeg",
+img: "/images/perro1.jpeg",
 acento: "#ea4f4e",
 incluye: [
 "Vacunación primaria completa (moquillo, parvovirus, hepatitis, leptospirosis)",
@@ -86,7 +86,7 @@ titulo: "Bienestar Adulto para Perros",
 especie: "Perros",
 edad: "1 – 7 años",
 desc: "Mantener la inmunidad activa y controlar los parásitos no es un trámite, es parte del cuidado diario. Con el plan adulto tu perro tiene cubierto el mantenimiento preventivo anual sin tener que estar pendiente de cada cosa.",
-img: "/images/sobre-veter.png",
+img: "/images/perro2.jpeg",
 acento: "#104766",
 incluye: [
 "Refuerzo vacunal anual (DHPPI + leptospirosis)",
@@ -101,7 +101,7 @@ titulo: "Cuidado Senior para Perros",
 especie: "Perros",
 edad: "A partir de 7 años",
 desc: "Con la edad cambian las prioridades. Los perros mayores necesitan más atención, no menos. Aumentamos la frecuencia de las revisiones, añadimos analíticas de control y ajustamos los protocolos a lo que un animal senior realmente necesita.",
-img: "/images/atencion-increible.jpg",
+img: "/images/perro3.jpeg",
 acento: "#ea4f4e",
 incluye: [
 "Revisiones clínicas cada 6 meses",
@@ -116,7 +116,7 @@ titulo: "Primeros Cuidados para Gatitos",
 especie: "Gatos",
 edad: "0 – 12 meses",
 desc: "Los gatitos necesitan un calendario preventivo específico desde las primeras semanas. Cubrimos las vacunas esenciales, la identificación y las desparasitaciones iniciales para que empiece su vida con una base sólida de salud.",
-img: "/images/super-conveniente.jpeg",
+img: "/images/gato1.jpeg",
 acento: "#104766",
 incluye: [
 "Vacunación primaria (triple felina: rinotraqueítis, calicivirus, panleucopenia)",
@@ -131,7 +131,7 @@ titulo: "Bienestar Adulto para Gatos",
 especie: "Gatos",
 edad: "1 – 8 años",
 desc: "Un gato adulto sano sigue necesitando prevención activa. El plan adulto para gatos mantiene al día las vacunas y los tratamientos antiparasitarios, con una revisión anual para detectar cualquier cambio antes de que se convierta en un problema.",
-img: "/images/sobre-veter.png",
+img: "/images/gato2.jpeg",
 acento: "#ea4f4e",
 incluye: [
 "Refuerzo vacunal anual (triple felina + FeLV)",
@@ -146,7 +146,7 @@ titulo: "Cuidado Senior para Gatos",
 especie: "Gatos",
 edad: "A partir de 8 años",
 desc: "Los gatos mayores son más discretos con los síntomas, lo que hace que las revisiones periódicas sean aún más importantes. El plan senior incluye controles más frecuentes y analíticas para mantener una vigilancia real sobre su estado de salud.",
-img: "/images/atencion-increible.jpg",
+img: "/images/gato3.jpeg",
 acento: "#104766",
 incluye: [
 "Revisiones clínicas cada 6 meses",
@@ -200,9 +200,8 @@ Prevenir siempre es mejor que curar. Un buen protocolo preventivo es la forma m�
 
 {/* Introducción — narrativa, sin enumeraciones */}
 <section className="bg-white py-16 px-4">
-<div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+<div className="max-w-3xl mx-auto">
 
-<div className="flex-1">
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 Nuestro enfoque
 </p>
@@ -218,20 +217,6 @@ En Veter no aplicamos protocolos genéricos. Diseñamos el plan preventivo de ca
 <p className="text-gray-500 text-base leading-relaxed text-justify">
 Si tu mascota no tiene un historial actualizado o llevas tiempo sin pasar por la clínica, la consulta preventiva es el mejor punto de partida. Sin presiones, sin protocolo rígido: simplemente revisamos en qué punto está y qué necesita a partir de ahora.
 </p>
-</div>
-
-<div className="flex-shrink-0 w-full md:w-[520px] relative">
-<div className="absolute -bottom-4 -right-4 w-full h-full pointer-events-none"
-style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
-<Image
-src="/images/perro1.jpeg"
-alt="Mascota feliz y saludable en Veter Centro Veterinario"
-width={520}
-height={520}
-className="w-full h-auto relative z-10"
-style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
-/>
-</div>
 
 </div>
 </section>
@@ -249,24 +234,7 @@ Servicios preventivos
 </h2>
 </div>
 
-<div className="flex flex-col md:flex-row gap-10 items-center">
-
-<div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-6">
-<div className="relative w-full">
-<div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
-style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
-<Image
-src="/images/gato1.jpeg"
-alt="Gato en revisión preventiva en Veter"
-width={400}
-height={400}
-className="w-full h-auto relative z-10"
-style={{ borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }}
-/>
-</div>
-</div>
-
-<div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 {servicios.map((s) => (
 <div
 key={s.nombre}
@@ -296,8 +264,6 @@ style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 </div>
 
 </div>
-
-</div>
 </section>
 
 {/* Planes de salud — sección destacada */}
@@ -319,7 +285,7 @@ style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 <div key={p.titulo}
 className="rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
 style={{ border: "1px solid #e5e7eb" }}>
-<div className="relative w-full h-52 overflow-hidden">
+<div className="relative w-full h-72 overflow-hidden">
 <Image src={p.img} alt={p.titulo} fill className="object-cover transition-transform duration-500 hover:scale-105" />
 <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${p.acento}cc 0%, transparent 60%)` }} />
 <div className="absolute bottom-4 left-5">
@@ -351,7 +317,7 @@ style={{ border: "1px solid #e5e7eb" }}>
 <div key={p.titulo}
 className="rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
 style={{ border: "1px solid #e5e7eb" }}>
-<div className="relative w-full h-52 overflow-hidden">
+<div className="relative w-full h-72 overflow-hidden">
 <Image src={p.img} alt={p.titulo} fill className="object-cover transition-transform duration-500 hover:scale-105" />
 <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${p.acento}cc 0%, transparent 60%)` }} />
 <div className="absolute bottom-4 left-5">
