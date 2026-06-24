@@ -63,17 +63,29 @@ icono: (
 </svg>
 ),
 },
+]
+
+const planes = [
 {
-nombre: "Plan de salud personalizado",
-desc: "Cada mascota tiene su propio ritmo. Diseñamos un calendario preventivo anual que combina vacunas, desparasitaciones y revisiones, pensado para su edad, raza y forma de vida. Sin protocolos genéricos.",
-icono: (
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-<line x1="16" y1="2" x2="16" y2="6"/>
-<line x1="8" y1="2" x2="8" y2="6"/>
-<line x1="3" y1="10" x2="21" y2="10"/>
-</svg>
-),
+titulo: "Plan Cachorro",
+edad: "0 – 12 meses",
+desc: "El primer año es el más importante. Vacunación primaria completa, desparasitaciones adaptadas al desarrollo y revisiones de seguimiento para asegurarnos de que empieza con buen pie.",
+img: "/images/super-conveniente.jpeg",
+acento: "#ea4f4e",
+},
+{
+titulo: "Plan Adulto",
+edad: "1 – 7 años",
+desc: "Mantenemos la inmunidad activa con refuerzos anuales y controlamos la desparasitación según el estilo de vida. Una revisión anual es suficiente para detectar a tiempo lo que no se ve a simple vista.",
+img: "/images/sobre-veter.png",
+acento: "#104766",
+},
+{
+titulo: "Plan Senior",
+edad: "A partir de 7 años",
+desc: "Con la edad cambian las prioridades. Aumentamos la frecuencia de las revisiones, añadimos analíticas de control y ajustamos los protocolos preventivos a las necesidades de un animal mayor.",
+img: "/images/atencion-increible.jpg",
+acento: "#ea4f4e",
 },
 ]
 
@@ -214,6 +226,39 @@ style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 ))}
 </div>
 
+</div>
+
+</div>
+</section>
+
+{/* Planes de salud — sección destacada */}
+<section className="bg-white py-20 px-4">
+<div className="max-w-5xl mx-auto">
+
+<div className="text-center mb-14">
+<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Adaptado a cada etapa</p>
+<h2 className="text-3xl md:text-4xl font-extrabold leading-tight" style={{ color: "#104766" }}>Planes de Salud</h2>
+<p className="text-gray-400 mt-3 text-base max-w-xl mx-auto">Un protocolo pensado para cada momento de la vida de tu mascota</p>
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+{planes.map((p) => (
+<div key={p.titulo}
+className="rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300"
+style={{ border: "1px solid #e5e7eb" }}>
+<div className="relative w-full h-52 overflow-hidden">
+<Image src={p.img} alt={p.titulo} fill className="object-cover transition-transform duration-500 hover:scale-105" />
+<div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${p.acento}cc 0%, transparent 60%)` }} />
+<div className="absolute bottom-4 left-5">
+<span className="text-xs font-bold uppercase tracking-widest text-white opacity-90">{p.edad}</span>
+</div>
+</div>
+<div className="p-7 flex flex-col flex-1" style={{ borderTop: `4px solid ${p.acento}` }}>
+<h3 className="text-xl font-extrabold mb-3" style={{ color: "#104766" }}>{p.titulo}</h3>
+<p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
+</div>
+</div>
+))}
 </div>
 
 </div>
