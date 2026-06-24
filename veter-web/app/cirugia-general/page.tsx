@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
 title: "Cirugía General Veterinaria | Veter Centro Veterinario Rincón de la Victoria",
@@ -136,12 +137,26 @@ La Dra. Celeste Trevisi, con formación en medicina interna y cirugía general, 
 <section style={{ backgroundColor: "#f8fafc" }} className="py-16 px-4">
 <div className="max-w-4xl mx-auto">
 
+<div className="flex items-center justify-between mb-12">
+<div>
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
 Qué realizamos
 </p>
-<h2 className="text-2xl md:text-3xl font-bold mb-12 leading-snug" style={{ color: "#104766" }}>
+<h2 className="text-2xl md:text-3xl font-bold leading-snug" style={{ color: "#104766" }}>
 Procedimientos habituales
 </h2>
+</div>
+<div className="hidden md:block flex-shrink-0">
+<Image
+src="/images/ilustracion-cirugia.png"
+alt=""
+width={120}
+height={120}
+className="w-28 h-auto"
+aria-hidden="true"
+/>
+</div>
+</div>
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 {procedimientos.map((p) => (
