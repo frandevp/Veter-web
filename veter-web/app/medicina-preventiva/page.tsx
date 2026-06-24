@@ -160,7 +160,7 @@ src="/images/ilustracion-veter.png"
 alt="Your pet is always better with Veter"
 width={220}
 height={220}
-className="w-48 h-auto mx-auto"
+className="w-48 h-auto mx-auto mt-16"
 aria-hidden="true"
 />
 </div>
