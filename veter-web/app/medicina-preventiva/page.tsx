@@ -106,10 +106,11 @@ Prevenir siempre es mejor que curar. Un buen protocolo preventivo es la forma m�
 </div>
 </section>
 
-{/* Introducción — narrativa, sin enumeraciones */}
+{/* Introducción + etapas + imagen */}
 <section className="bg-white py-16 px-4">
-<div className="max-w-3xl mx-auto">
+<div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-14 items-start">
 
+<div className="flex-1 min-w-0">
 <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#ea4f4e" }}>
 Nuestro enfoque
 </p>
@@ -122,9 +123,37 @@ La medicina preventiva parte de una idea sencilla: es mucho más fácil evitar u
 <p className="text-gray-500 text-base leading-relaxed mb-4 text-justify">
 En Veter no aplicamos protocolos genéricos. Diseñamos el plan preventivo de cada animal teniendo en cuenta su edad, su raza, su estilo de vida y el entorno en el que vive. Un perro que sale al campo todos los días no tiene las mismas necesidades que uno que vive en un piso en el centro del pueblo.
 </p>
-<p className="text-gray-500 text-base leading-relaxed text-justify">
+<p className="text-gray-500 text-base leading-relaxed mb-10 text-justify">
 Si tu mascota no tiene un historial actualizado o llevas tiempo sin pasar por la clínica, la consulta preventiva es el mejor punto de partida. Sin presiones, sin protocolo rígido: simplemente revisamos en qué punto está y qué necesita a partir de ahora.
 </p>
+
+<div className="flex flex-col gap-4">
+{etapas.map((e) => (
+<div key={e.num} className="flex gap-4 items-start rounded-xl p-5"
+style={{ backgroundColor: "#f8fafc", borderLeft: `4px solid ${e.acento}` }}>
+<span className="text-2xl font-extrabold leading-none select-none flex-shrink-0 mt-0.5"
+style={{ color: e.acento, opacity: 0.4 }} aria-hidden="true">{e.num}</span>
+<div>
+<h3 className="text-sm font-bold mb-1" style={{ color: "#104766" }}>{e.titulo}</h3>
+<p className="text-gray-500 text-sm leading-relaxed">{e.desc}</p>
+</div>
+</div>
+))}
+</div>
+</div>
+
+<div className="flex-shrink-0 w-full md:w-[420px] relative self-start mt-4 md:mt-0">
+<div className="absolute -bottom-5 -right-5 w-full h-full pointer-events-none"
+style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "55% 45% 38% 62% / 48% 58% 42% 52%" }} />
+<Image
+src="/images/preventiva-hero.jpg"
+alt="Veterinaria con perro en Veter Centro Veterinario"
+width={420}
+height={560}
+className="w-full h-auto relative z-10"
+style={{ borderRadius: "55% 45% 38% 62% / 48% 58% 42% 52%", objectFit: "cover" }}
+/>
+</div>
 
 </div>
 </section>
@@ -185,49 +214,6 @@ style={{ backgroundColor: "#eff6ff", color: "#104766" }}
 </div>
 
 <PlanesGrid />
-
-</div>
-</section>
-
-{/* Cómo funciona — 3 etapas del cuidado preventivo */}
-<section className="bg-white py-16 px-4">
-<div className="max-w-4xl mx-auto">
-
-<p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>
-Cómo funciona
-</p>
-<h2 className="text-2xl md:text-3xl font-bold mb-12 leading-snug" style={{ color: "#104766" }}>
-La prevención como hábito
-</h2>
-
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-{etapas.map((e) => (
-<div
-key={e.num}
-className="relative rounded-2xl p-8 flex flex-col"
-style={{
-backgroundColor: "#f8fafc",
-border: "1px solid #e5e7eb",
-borderTop: `4px solid ${e.acento}`,
-boxShadow: "0 2px 12px 0 rgba(16,71,102,0.06)",
-}}
->
-<span
-className="text-5xl font-extrabold leading-none mb-5 select-none"
-style={{ color: e.acento, opacity: 0.18 }}
-aria-hidden="true"
->
-{e.num}
-</span>
-<h3 className="text-lg font-bold mb-3 leading-snug" style={{ color: "#104766" }}>
-{e.titulo}
-</h3>
-<p className="text-gray-500 text-sm leading-relaxed">
-{e.desc}
-</p>
-</div>
-))}
-</div>
 
 </div>
 </section>
