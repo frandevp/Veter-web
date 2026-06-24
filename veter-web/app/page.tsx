@@ -32,7 +32,7 @@ desc: "Se abordan más del 95 % de sus necesidades de atención, con servicios v
 {
 img: "/images/super-conveniente.jpeg",
 titulo: "Súper conveniente",
-desc: "Planes de Salud. Citas para el mismo día o para día siguiente. Abierto hasta las 20:00 h.",
+desc: "Planes de Salud. Citas para el mismo día o para día siguiente.",
 },
 ]
 
