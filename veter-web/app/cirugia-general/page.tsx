@@ -134,16 +134,15 @@ La Dra. Celeste Trevisi, con formación en medicina interna y cirugía general, 
 </p>
 </div>
 
-<div className="flex-shrink-0 w-full md:w-[520px] relative">
+<div className="flex-shrink-0 w-full md:w-[480px] relative">
 <div className="absolute -bottom-4 -right-4 w-full h-full pointer-events-none"
-style={{ backgroundColor: "#ea4f4e", opacity: 0.12, borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }} />
+style={{ backgroundColor: "#104766", opacity: 0.10, borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }} />
 <Image
-src="/images/cirugia-perro.jpg"
-alt="Perro feliz en Veter Centro Veterinario"
-width={520}
-height={520}
+src="/images/Diseno-sin-titulo-17.png"
+alt="Chica con gato en Veter Centro Veterinario"
+width={480}
+height={480}
 className="w-full h-auto relative z-10"
-style={{ borderRadius: "55% 45% 40% 60% / 45% 55% 45% 55%" }}
 />
 </div>
 
@@ -165,34 +164,26 @@ Procedimientos habituales
 
 <div className="flex flex-col md:flex-row gap-10 items-center">
 
-<div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-6">
-<Image
-src="/images/Diseno-sin-titulo-17.png"
-alt="Your pet is always better with Veter"
-width={400}
-height={400}
-className="w-full h-auto"
-aria-hidden="true"
-/>
+<div className="flex-shrink-0 w-full md:w-[400px] flex flex-col items-center gap-8">
 <div className="relative w-full">
 <div className="absolute -bottom-4 -left-4 w-full h-full pointer-events-none"
-style={{ backgroundColor: "#104766", opacity: 0.30, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
+style={{ backgroundColor: "#104766", opacity: 0.15, borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }} />
 <Image
-src="/images/cirugia-veterinaria.png"
-alt="Veterinaria preparando quirófano en Veter"
+src="/images/editfotocirugia-700x685.png"
+alt="Veterinaria preparando instrumental en quirófano de Veter"
 width={400}
-height={400}
+height={392}
 className="w-full h-auto relative z-10"
 style={{ borderRadius: "40% 60% 55% 45% / 50% 45% 55% 50%" }}
 />
 </div>
-<div className="hidden md:block">
+<div className="hidden md:flex justify-center pt-4">
 <Image
-src="/images/ilustracion-cirugia.png"
+src="/images/ilustracion-maletín.png"
 alt=""
-width={160}
-height={160}
-className="w-40 h-auto"
+width={140}
+height={140}
+className="w-36 h-auto"
 aria-hidden="true"
 />
 </div>
