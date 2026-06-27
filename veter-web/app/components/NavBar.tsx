@@ -7,6 +7,7 @@ const navLinks = [
 { href: "/servicios", label: "Consultas" },
 { href: "/cirugia-general", label: "Cirugía General" },
 { href: "/medicina-preventiva", label: "Medicina Preventiva" },
+{ href: "/tienda", label: "Tienda" },
 { href: "/blog", label: "Blog" },
 { href: "/contacto", label: "Contacto" },
 ]
@@ -53,20 +54,20 @@ aria-expanded={open}>
 
 {/* mobile menu */}
 {open && (
-<div className="md:hidden bg-white border-t border-gray-100 px-4 py-5">
-<ul className="flex flex-col gap-3 text-sm font-semibold" style={{ color: "#104766" }}>
+<div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
+<ul className="flex flex-col text-sm font-semibold" style={{ color: "#104766" }}>
 {navLinks.map(l => (
 <li key={l.href}>
 <a href={l.href} onClick={() => setOpen(false)}
-className="hover:text-[#ea4f4e] transition block py-1.5 border-b border-gray-50">
+className="hover:bg-gray-50 hover:text-[#ea4f4e] transition flex items-center px-5 py-3.5 border-b border-gray-100">
 {l.label}
 </a>
 </li>
 ))}
-<li className="pt-2">
+<li className="px-5 py-4">
 <a href="https://wa.me/message/QSHQLWTJJJYDI1"
 target="_blank" rel="noopener noreferrer"
-className="text-white font-semibold px-5 py-2.5 rounded-full inline-block transition"
+className="text-white font-semibold px-5 py-3 rounded-full inline-block transition w-full text-center"
 style={{ backgroundColor: "#ea4f4e" }}>
 Hacer una Cita
 </a>

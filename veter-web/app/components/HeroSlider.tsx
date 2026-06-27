@@ -22,7 +22,7 @@ className="text-white font-semibold px-6 py-2.5 rounded-full hover:opacity-90 tr
 style={{ backgroundColor: "#ea4f4e" }}>
 Hacer una Cita
 </a>
-<a href="/servicios"
+<a href="/medicina-preventiva"
 className="text-white font-semibold px-6 py-2.5 rounded-full border border-white hover:bg-white hover:text-[#104766] transition text-sm">
 Planes de Salud
 </a>
