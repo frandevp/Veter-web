@@ -67,13 +67,30 @@ return (
 )
 }
 
+import { useEffect } from "react"
+
 export default function ReviewsCarousel() {
 const [desde, setDesde] = useState(0)
-const visibles = 3
-const max = reseñas.length - visibles
+const [visibles, setVisibles] = useState(3)
+
+useEffect(() => {
+  function update() {
+    if (window.innerWidth < 640) setVisibles(1)
+    else if (window.innerWidth < 1024) setVisibles(2)
+    else setVisibles(3)
+  }
+  update()
+  window.addEventListener("resize", update)
+  return () => window.removeEventListener("resize", update)
+}, [])
+
+const max = Math.max(0, reseñas.length - visibles)
 
 function prev() { setDesde(i => Math.max(0, i - 1)) }
 function next() { setDesde(i => Math.min(max, i + 1)) }
+
+// Reset posicion si visibles cambia y desde queda fuera
+useEffect(() => { setDesde(i => Math.min(i, max)) }, [max])
 
 return (
 <section className="py-20 px-4" style={{ backgroundColor: "#faf8f6" }}>
@@ -81,7 +98,7 @@ return (
 <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#104766" }}>Testimonios</h2>
 
 <div className="flex gap-8 items-start">
-{/* panel izquierdo */}
+{/* panel izquierdo — solo desktop */}
 <div className="hidden md:flex flex-col items-center shrink-0 w-44 text-center">
 <div className="mb-3">
 <img src="/images/logo-130-x-50-1.png" alt="Veter" className="h-12 w-auto" />
@@ -124,12 +141,12 @@ style={{ backgroundColor: r.color }}>
 
 {/* flechas */}
 <button onClick={prev} disabled={desde === 0}
-className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition disabled:opacity-30"
+className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-4 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition disabled:opacity-30 z-10"
 style={{ color: "#104766" }}>
 ‹
 </button>
 <button onClick={next} disabled={desde >= max}
-className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition disabled:opacity-30"
+className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-4 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition disabled:opacity-30 z-10"
 style={{ color: "#104766" }}>
 ›
 </button>

@@ -10,10 +10,10 @@ style={{ backgroundImage: "url(/images/O0A0943-scaled.jpg)", backgroundSize: "co
 <div className="relative w-full px-6 py-20 flex flex-col items-center text-center">
 <img src={LOGO} alt="Veter Group" className="h-10 mb-6"
 style={{ filter: "brightness(0) invert(1)" }} />
-<p className="text-white text-sm mb-2 tracking-wide whitespace-nowrap">
+<p className="text-white text-sm mb-2 tracking-wide">
 Your Pets it&apos;s allways better with Veter
 </p>
-<h1 className="font-bold mb-7 whitespace-nowrap text-xl md:text-3xl" style={{ color: "#ffffff" }}>
+<h1 className="font-bold mb-7 text-xl md:text-3xl max-w-xs md:max-w-none" style={{ color: "#ffffff" }}>
 La Salud de tu Mascota en las mejores manos
 </h1>
 <div className="flex flex-wrap gap-3 justify-center">

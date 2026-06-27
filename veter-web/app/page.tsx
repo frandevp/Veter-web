@@ -176,9 +176,9 @@ Ver todos nuestros servicios
 
 {/* imagen blob */}
 <div className="flex justify-center">
-<div className="relative w-[460px] h-[520px] shrink-0">
+<div className="relative w-full max-w-[340px] h-[380px] md:max-w-[460px] md:h-[520px]">
 {/* mancha de color detras del blob para dar profundidad */}
-<div className="absolute -bottom-4 -right-4 w-[440px] h-[500px] opacity-20 rounded-full"
+<div className="absolute -bottom-4 -right-4 w-[95%] h-[95%] opacity-20"
 style={{
 backgroundColor: "#ea4f4e",
 borderRadius: "72% 28% 38% 62% / 55% 67% 33% 45%",
@@ -186,14 +186,13 @@ borderRadius: "72% 28% 38% 62% / 55% 67% 33% 45%",
 <Image
 src="/images/clientes.jpg"
 alt="Clientes satisfechos de Veter Centro Veterinario"
-width={460}
-height={520}
-className="object-cover w-full h-full relative z-10"
+fill
+className="object-cover relative z-10"
 style={{
 borderRadius: "72% 28% 38% 62% / 55% 67% 33% 45%",
 objectPosition: "center top",
 }}
-sizes="340px"
+sizes="(max-width: 768px) 340px, 460px"
 />
 </div>
 </div>
