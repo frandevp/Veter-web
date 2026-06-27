@@ -7,7 +7,7 @@ return (
 <section className="relative text-white min-h-screen flex items-center overflow-hidden"
 style={{ backgroundImage: "url(/images/O0A0943-scaled.jpg)", backgroundSize: "cover", backgroundPosition: "center top" }}>
 <div className="absolute inset-0" style={{ backgroundColor: "rgba(16, 71, 102, 0.45)" }} />
-<div className="relative w-full px-6 py-20 flex flex-col items-center text-center">
+<div className="relative w-full px-6 py-12 md:py-20 flex flex-col items-center text-center">
 <img src={LOGO} alt="Veter Group" className="h-10 mb-6"
 style={{ filter: "brightness(0) invert(1)" }} />
 <p className="text-white text-sm mb-2 tracking-wide">

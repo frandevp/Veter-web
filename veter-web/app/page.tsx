@@ -80,7 +80,7 @@ return (
 <HeroSlider />
 
 {/* seccion sobre nosotros */}
-<section className="max-w-6xl mx-auto px-4 py-24 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+<section className="max-w-6xl mx-auto px-4 py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center">
 <div>
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Sobre Veter</p>
 <h2 className="text-3xl font-bold mb-5" style={{ color: "#104766" }}>Veter Centro Veterinario</h2>
@@ -112,11 +112,11 @@ style={{ borderRadius: "42% 58% 43% 57% / 52% 36% 64% 48%" }} />
 </section>
 
 {/* 3 columnas con imagenes de wp */}
-<section className="bg-gray-50 py-24 px-4">
+<section className="bg-gray-50 py-12 md:py-24 px-4">
 <div className="max-w-6xl mx-auto">
 <h2 className="text-3xl font-bold text-center mb-2" style={{ color: "#104766" }}>¿Qué nos hace diferentes?</h2>
-<p className="text-center mb-14 text-gray-500">Cercanía, empatía y excelencia</p>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-14">
+<p className="text-center mb-8 md:mb-14 text-gray-500">Cercanía, empatía y excelencia</p>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-14">
 {diferencias.map(d => (
 <div key={d.titulo} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
 <div className="relative w-full h-52">
@@ -134,8 +134,8 @@ sizes="(max-width: 768px) 100vw, 33vw" />
 </section>
 
 {/* rejilla servicios */}
-<section className="py-24 px-4">
-<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section className="py-12 md:py-24 px-4">
+<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 <div className="relative w-full h-[480px]">
 <Image src="/images/O0A0940-scaled.jpg"
 alt="Servicios veterinarios" fill
@@ -167,12 +167,12 @@ Ver todos nuestros servicios
 <ReviewsCarousel />
 
 {/* testimonios reales */}
-<section className="bg-gray-50 py-24 px-4 overflow-hidden">
+<section className="bg-gray-50 py-12 md:py-24 px-4 overflow-hidden">
 <div className="max-w-6xl mx-auto">
 <p className="text-sm font-semibold uppercase tracking-widest mb-3 text-center" style={{ color: "#ea4f4e" }}>Lo que dicen</p>
-<h2 className="text-3xl font-bold text-center mb-16" style={{ color: "#104766" }}>¿Por qué los padres de mascotas aman a Veter?</h2>
+<h2 className="text-3xl font-bold text-center mb-8 md:mb-16" style={{ color: "#104766" }}>¿Por qué los padres de mascotas aman a Veter?</h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
 {/* imagen blob */}
 <div className="flex justify-center">
@@ -228,8 +228,8 @@ style={{ backgroundColor: "#104766" }}>
 
 
 {/* donde estamos */}
-<section className="py-24 px-4 bg-gray-50">
-<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<section className="py-12 md:py-24 px-4 bg-gray-50">
+<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 <div>
 <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#ea4f4e" }}>Encuéntranos</p>
 <h2 className="text-3xl font-bold mb-2" style={{ color: "#104766" }}>¿Dónde estamos?</h2>
@@ -261,8 +261,8 @@ title="Ubicación Veter Centro Veterinario"
 
 
 {/* datos de contacto rapido */}
-<section className="py-20 px-4 bg-gray-50">
-<div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+<section className="py-10 md:py-20 px-4 bg-gray-50">
+<div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 text-center">
 <div>
 <p className="text-3xl mb-3">📞</p>
 <h4 className="font-bold mb-2" style={{ color: "#104766" }}>Teléfonos</h4>
@@ -282,9 +282,9 @@ title="Ubicación Veter Centro Veterinario"
 </section>
 
 {posts.length > 0 && (
-<section className="py-20 px-4">
+<section className="py-10 md:py-20 px-4">
 <div className="max-w-6xl mx-auto">
-<h2 className="text-2xl font-bold mb-10" style={{ color: "#104766" }}>Últimas entradas</h2>
+<h2 className="text-2xl font-bold mb-6 md:mb-10" style={{ color: "#104766" }}>Últimas entradas</h2>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 {posts.map(post => {
 let img = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url

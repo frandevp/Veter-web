@@ -93,9 +93,9 @@ function next() { setDesde(i => Math.min(max, i + 1)) }
 useEffect(() => { setDesde(i => Math.min(i, max)) }, [max])
 
 return (
-<section className="py-20 px-4" style={{ backgroundColor: "#faf8f6" }}>
+<section className="py-10 md:py-20 px-4" style={{ backgroundColor: "#faf8f6" }}>
 <div className="max-w-6xl mx-auto">
-<h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#104766" }}>Testimonios</h2>
+<h2 className="text-4xl font-bold text-center mb-6 md:mb-12" style={{ color: "#104766" }}>Testimonios</h2>
 
 <div className="flex gap-8 items-start">
 {/* panel izquierdo — solo desktop */}
