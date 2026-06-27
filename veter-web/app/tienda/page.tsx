@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Tienda — Productos recomendados para tu mascota",
@@ -28,6 +29,7 @@ interface Producto {
   link: string
   categoria: Categoria
   para: string
+  imagen: string
 }
 
 const PRODUCTOS: Producto[] = [
@@ -38,6 +40,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4uAbsUq",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/impromune-200.jpg",
   },
   {
     nombre: "Bioiberica Impromune 40 Comprimidos",
@@ -46,6 +49,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/3S5i27J",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/impromune-40.jpg",
   },
   {
     nombre: "Bioiberica Impromune Pasta 30 ml",
@@ -54,6 +58,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/3S2ryIQ",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/impromune-pasta.jpg",
   },
   {
     nombre: "Chemical Iberica Visvitae 15 g Epitelizante",
@@ -62,6 +67,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4fCfWGh",
     categoria: "heridas",
     para: "Perros y gatos",
+    imagen: "/images/tienda/visvitae.jpg",
   },
   {
     nombre: "Dermovital Omega 3-6-9 — 300 Cápsulas",
@@ -70,6 +76,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4fCg2xD",
     categoria: "dermatologia",
     para: "Perros",
+    imagen: "/images/tienda/dermovital-omega.png",
   },
   {
     nombre: "Douxo S3 Calm Champú para Perros y Gatos",
@@ -78,6 +85,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4uucu44",
     categoria: "dermatologia",
     para: "Perros y gatos",
+    imagen: "/images/tienda/douxo-calm.jpg",
   },
   {
     nombre: "Douxo S3 Pyo Champú para Perros y Gatos",
@@ -86,6 +94,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4eCLbjp",
     categoria: "dermatologia",
     para: "Perros y gatos",
+    imagen: "/images/tienda/douxo-pyo.jpg",
   },
   {
     nombre: "Heel Gasteel Vet Complemento Alimenticio",
@@ -94,6 +103,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4afggHB",
     categoria: "digestivo",
     para: "Perros y gatos",
+    imagen: "/images/tienda/gasteel.jpg",
   },
   {
     nombre: "Heel Mobeel Articulaciones — 50 Sobres",
@@ -102,6 +112,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/43xqRK5",
     categoria: "articulaciones",
     para: "Perros y gatos",
+    imagen: "/images/tienda/mobeel.jpg",
   },
   {
     nombre: "Heel Pacifeel Jarabe Complemento Alimenticio",
@@ -110,6 +121,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4xlLSVA",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/pacifeel.jpg",
   },
   {
     nombre: "Heel Tusheel Vet Jarabe para Perros",
@@ -118,6 +130,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4e5BmdL",
     categoria: "suplementos",
     para: "Perros",
+    imagen: "/images/tienda/tusheel.jpg",
   },
   {
     nombre: "Ocucan Limpiador Ocular Perros y Gatos",
@@ -126,6 +139,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4oj6UQA",
     categoria: "ocular",
     para: "Perros y gatos",
+    imagen: "/images/tienda/ocucan.jpg",
   },
   {
     nombre: "Proenteric Advanced Perro 15 ml",
@@ -134,6 +148,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4eD5xJj",
     categoria: "digestivo",
     para: "Perros",
+    imagen: "/images/tienda/proenteric.jpg",
   },
   {
     nombre: "Stangest Cronicare 60 Comprimidos",
@@ -142,6 +157,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/3S3H07w",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/cronicare-60.jpg",
   },
   {
     nombre: "Stangest Cronicare Oil 100 ml",
@@ -150,6 +166,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/4fAy3MK",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/cronicare-oil.png",
   },
   {
     nombre: "Stangest Cronicare Suplemento 120 Comprimidos",
@@ -158,6 +175,7 @@ const PRODUCTOS: Producto[] = [
     link: "https://amzn.to/3Q05UEx",
     categoria: "suplementos",
     para: "Perros y gatos",
+    imagen: "/images/tienda/cronicare-120.jpg",
   },
 ]
 
@@ -215,17 +233,15 @@ function CardProducto({ p }: { p: Producto }) {
   const cat = CATEGORIAS[p.categoria]
   return (
     <article className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-200">
-      {/* cabecera de color con icono */}
-      <div
-        className="flex items-center justify-center py-8"
-        style={{ backgroundColor: cat.color + "18" }}
-      >
-        <div
-          className="w-16 h-16 rounded-full flex items-center justify-center"
-          style={{ backgroundColor: cat.color + "22", color: cat.color }}
-        >
-          <IconoCategoria cat={p.categoria} />
-        </div>
+      {/* imagen del producto */}
+      <div className="relative w-full h-44 bg-gray-50">
+        <Image
+          src={p.imagen}
+          alt={p.nombre}
+          fill
+          className="object-contain p-4"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        />
       </div>
 
       {/* contenido */}
