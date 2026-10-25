@@ -303,8 +303,9 @@ sizes="(max-width: 768px) 100vw, 33vw" />
 <h3 className="font-bold text-base mb-2 group-hover:text-[#ea4f4e] transition"
 style={{ color: "#104766" }}
 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-<div className="text-gray-500 text-sm line-clamp-2"
-dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+<p className="text-gray-500 text-sm line-clamp-2">
+{post.excerpt.rendered.replace(/<[^>]*>/g, "").trim()}
+</p>
 </div>
 </a>
 )
